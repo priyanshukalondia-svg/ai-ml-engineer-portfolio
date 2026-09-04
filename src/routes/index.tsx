@@ -186,7 +186,7 @@ function Portfolio() {
   const [showMore, setShowMore] = useState(false);
   return (
     <main id="top" className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-foreground">
-      <header className="relative z-30 border-b border-border bg-background/95 px-5 py-5 backdrop-blur md:px-10">
+      <header className="fixed left-0 right-0 top-0 z-30 border-b border-border bg-background/95 px-5 py-5 backdrop-blur md:px-10">
         <nav aria-label="Primary navigation" className="mx-auto flex max-w-[1500px] items-center justify-between gap-6">
           <a href="#top" className="font-display text-lg uppercase">AI<span className="text-accent">/</span>ML</a>
           <div className="hidden items-center gap-7 font-mono text-[11px] uppercase text-muted-foreground md:flex"><a href="#about" className="hover:text-accent">About</a><a href="#projects" className="hover:text-accent">Work</a><a href="#record" className="hover:text-accent">Record</a></div>
@@ -194,7 +194,7 @@ function Portfolio() {
         </nav>
       </header>
 
-      <section className="system-grid relative mx-auto min-h-[820px] max-w-[1500px] overflow-hidden border-x border-border px-5 pb-16 pt-20 md:px-10 md:pb-20 md:pt-24 lg:px-14">
+      <section className="system-grid relative mx-auto min-h-[820px] max-w-[1500px] overflow-hidden border-x border-border px-5 pb-16 pt-32 md:px-10 md:pb-20 md:pt-36 lg:px-14">
         <div className="absolute right-0 top-0 h-full w-[46%] opacity-45 [mask-image:linear-gradient(to_left,black,transparent)]"><img src={aiSystemHero.url} alt="Abstract artificial intelligence inference architecture" width={1920} height={1080} className="h-full w-full object-cover" /></div>
         <div className="relative z-10 flex min-h-[730px] flex-col justify-between">
           <div className="box-frame system-reveal flex flex-wrap items-center justify-between gap-4 p-4 font-mono text-[9px] uppercase text-muted-foreground">
