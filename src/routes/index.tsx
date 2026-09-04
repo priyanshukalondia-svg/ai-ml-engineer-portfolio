@@ -3,6 +3,7 @@ import { ArrowDown, ArrowUpRight, Braces, BrainCircuit, Boxes, DatabaseZap, Down
 import { useState } from "react";
 
 import aiSystemHero from "@/assets/ai-system-hero.jpg.asset.json";
+import contactVisual from "@/assets/contact-visual.jpg.asset.json";
 import customerSegmentation from "@/assets/customer-segmentation.jpg.asset.json";
 import dividerAIEngineering from "@/assets/divider-ai-engineering.jpg.asset.json";
 import dividerDataAI from "@/assets/divider-data-ai.jpg.asset.json";
