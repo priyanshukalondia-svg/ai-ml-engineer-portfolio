@@ -11,16 +11,21 @@ const contactSchema = z.object({
 export const sendContactMessage = createServerFn({ method: "POST" })
   .inputValidator((data) => contactSchema.parse(data))
   .handler(async ({ data }) => {
-    const supabase = createClient(
-      process.env["SUPABASE_URL"]!,
-      process.env["SUPABASE_PUBLISHABLE_KEY"]!,
-      { auth: { persistSession: false, autoRefreshToken: false, storage: undefined } },
-    );
-    const { error } = await supabase.from("contact_messages").insert({
-      name: data.name,
-      email: data.email,
-      message: data.message,
-    });
-    if (error) throw new Error("Failed to send message");
-    return { ok: true };
+    try {
+      const supabase = createClient(
+        process.env["SUPABASE_URL"]!,
+        process.env["SUPABASE_PUBLISHABLE_KEY"]!,
+        { auth: { persistSession: false, autoRefreshToken: false, storage: undefined } },
+      );
+      const { error } = await supabase.from("contact_messages").insert({
+        name: data.name,
+        email: data.email,
+        message: data.message,
+      });
+      if (error) throw new Error(`db: ${error.message}`);
+      return { ok: true };
+    } catch (e) {
+      console.error("contact form error:", e);
+      throw new Error(`send failed: ${e instanceof Error ? e.message : String(e)}`);
+    }
   });
