@@ -88,7 +88,7 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
 
 function SectionHeading({ index, label, title }: { index: string; label: string; title: string }) {
   return (
-    <div className="grid gap-6 border-y border-border py-9 md:grid-cols-[180px_1fr] md:items-end md:py-12">
+    <div className="grid gap-6 border border-border bg-card/40 py-9 md:grid-cols-[180px_1fr] md:items-end md:py-12 md:px-8">
       <div className="font-mono text-[10px] uppercase text-muted-foreground">[{index}] / {label}</div>
       <h2 className="font-display text-4xl uppercase leading-[0.9] md:text-7xl lg:text-8xl">{title}</h2>
     </div>
@@ -109,7 +109,7 @@ function SectionBreak({ index, label }: { index: string; label: string }) {
 
 function Project({ project, reverse = false }: { project: (typeof primaryProjects)[number]; reverse?: boolean }) {
   return (
-    <article className="grid border-b border-border lg:grid-cols-12">
+    <article className="box-3d grid border border-border bg-card/40 lg:grid-cols-12">
       <div className={`relative overflow-hidden border-border bg-card lg:col-span-7 ${reverse ? "lg:order-2 lg:border-l" : "lg:border-r"}`}>
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
         <img src={project.image} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] h-full w-full object-cover grayscale transition duration-700 hover:grayscale-0" />
