@@ -201,6 +201,8 @@ function Portfolio() {
         </div>
       </section>
 
+      <SectionBreak index="01" label="Profile" />
+
       <div className="relative mx-auto max-w-[1500px] overflow-hidden border-x border-border">
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
         <img src={dividerDataAI.url} alt="Abstract data and AI visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
