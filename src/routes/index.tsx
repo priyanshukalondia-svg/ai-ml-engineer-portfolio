@@ -204,11 +204,11 @@ function Portfolio() {
               const Icon = group.icon;
               const span = groupIndex < 2 ? "xl:col-span-6" : "xl:col-span-4";
               return (
-                <article key={group.title} className={`group relative overflow-hidden border-b border-border p-8 transition-colors duration-500 hover:bg-accent/50 hover:text-accent-foreground md:p-10 md:odd:border-r xl:border-r ${span}`}>
-                  <div className="pointer-events-none absolute -bottom-8 -right-2 font-display text-[9rem] leading-none text-foreground/[0.035] transition-all duration-500 group-hover:-translate-y-3 group-hover:text-accent-foreground/10">{group.index}</div>
+                <article key={group.title} className={`group relative overflow-hidden border-b border-border p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_14px_44px_-14px_rgba(255,255,255,0.12)] md:p-10 md:odd:border-r xl:border-r ${span}`}>
+                  <div className="pointer-events-none absolute -bottom-8 -right-2 font-display text-[9rem] leading-none text-foreground/[0.035] transition-all duration-500 group-hover:-translate-y-3">{group.index}</div>
                   <div className="relative z-10 flex items-start justify-between border-b border-current/20 pb-6">
                     <div><span className="font-mono text-[9px] opacity-60">MODULE_{group.index}</span><h4 className="mt-2 font-display text-2xl uppercase md:text-3xl">{group.title}</h4></div>
-                    <Icon className="size-7 text-accent transition-colors group-hover:text-accent-foreground" strokeWidth={1.4} />
+                    <Icon className="size-7 text-accent" strokeWidth={1.4} />
                   </div>
                   <ul className="relative z-10 mt-8 flex flex-wrap gap-2" aria-label={`${group.title} skills`}>
                     {group.skills.map((skill) => <li key={skill} className="border border-current/20 px-2.5 py-1.5 font-mono text-[9px] uppercase transition-transform duration-300 group-hover:-translate-y-0.5">{skill}</li>)}
