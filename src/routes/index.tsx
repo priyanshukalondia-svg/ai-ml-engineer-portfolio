@@ -177,6 +177,7 @@ function Experience({ experience }: { experience: (typeof experiences)[number] }
         )}
       </div>
     </article>
+    </Reveal>
   );
 }
 
