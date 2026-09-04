@@ -165,7 +165,7 @@ function Portfolio() {
           <div className="system-reveal max-w-[1200px] [animation-delay:120ms]">
             <p className="mb-6 font-mono text-[10px] uppercase text-accent">AI & ML Engineer / Portfolio 2026</p>
             <h1 className="-translate-y-2 font-display text-[2.6rem] uppercase leading-[0.78] sm:text-6xl md:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">Priyanshu Kalondia</h1>
-            <div className="mt-6 flex items-center gap-5"><div className="h-px flex-1 bg-border" /><p className="max-w-xl text-right font-mono text-sm uppercase leading-relaxed md:text-lg">Building <span className="text-accent">self-healing ML, agentic RAG,</span> and real-time risk systems.</p></div>
+            <div className="mt-6 flex items-center gap-5"><div className="h-px flex-1 bg-border" /><p className="max-w-xl text-right font-mono text-sm uppercase leading-relaxed md:text-lg">Engineering <span className="text-accent">intelligent systems</span> that learn, reason, and ship.</p></div>
           </div>
           <div className="system-reveal grid gap-8 [animation-delay:240ms] md:grid-cols-12 md:items-end">
             <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">I ship end-to-end AI systems: MLOps platforms that monitor, retrain, and rollback themselves; agentic RAG that reasons across documents; and real-time fraud detection that explains every risk score.</p>
