@@ -219,7 +219,7 @@ function Portfolio() {
 
       <section id="about" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="01" label="Profile" title="Built for production" />
-        <div className="grid lg:grid-cols-12">
+        <Reveal className="grid lg:grid-cols-12">
           <div className="box-frame p-8 md:p-14 lg:col-span-8">
             <p className="max-w-3xl font-mono text-lg font-normal leading-relaxed md:text-xl">I don't just train models—I ship systems. My work sits between research and production: MLOps pipelines that heal themselves, agentic retrieval that reasons across sources, and real-time risk engines that explain every decision.</p>
             <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -230,7 +230,7 @@ function Portfolio() {
             <div className="flex items-center gap-3 font-mono text-[10px] uppercase text-muted-foreground"><MapPin className="size-4 text-accent" /> Delhi, India</div>
             <div><p className="font-display text-6xl text-accent md:text-7xl">48</p><p className="mt-2 font-mono text-[9px] uppercase text-muted-foreground">Tools, methods & technologies in active stack</p></div>
           </div>
-        </div>
+        </Reveal>
         <div className="mt-16">
           <div className="box-frame flex flex-col justify-between gap-5 p-8 md:flex-row md:items-end md:p-14">
             <div><p className="font-mono text-[9px] uppercase text-accent">Technical arsenal / full résumé index</p><h3 className="mt-4 font-display text-4xl uppercase leading-none md:text-6xl">Skills matrix</h3></div>
@@ -241,7 +241,8 @@ function Portfolio() {
               const Icon = group.icon;
               const span = groupIndex < 2 ? "xl:col-span-6" : "xl:col-span-4";
               return (
-                <article key={group.title} className={`box-frame box-3d group relative overflow-hidden p-8 md:p-10 ${span}`}>
+                <Reveal key={group.title} className={span}>
+                <article className="box-frame box-3d group relative h-full overflow-hidden p-8 md:p-10">
                   <div className="pointer-events-none absolute -bottom-8 -right-2 font-display text-[9rem] leading-none text-foreground/[0.035] transition-all duration-500 group-hover:-translate-y-3">{group.index}</div>
                   <div className="relative z-10 flex items-start justify-between border-b border-current/20 pb-6">
                     <div><span className="font-mono text-[9px] opacity-60">MODULE_{group.index}</span><h4 className="mt-2 font-display text-2xl uppercase md:text-3xl">{group.title}</h4></div>
