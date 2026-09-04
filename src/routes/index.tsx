@@ -289,11 +289,11 @@ function Portfolio() {
           <h2 className="mt-8 max-w-6xl font-display text-[13vw] uppercase leading-[0.8] md:text-8xl lg:text-[9rem]">Let's build what learns.</h2>
           <a href="mailto:priyanshukalondia@gmail.com" className="mt-12 inline-flex max-w-full items-center gap-3 break-all border-b border-foreground pb-2 font-mono text-xs transition-colors hover:border-accent hover:text-accent sm:text-base"><Mail className="size-5 shrink-0" />priyanshukalondia@gmail.com</a>
         </div>
+        <div className="grid gap-px border-t border-border bg-border sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset.url]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="flex items-center justify-between bg-background p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div>
         <div className="relative overflow-hidden border-t border-border">
           <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
           <img src={contactVisual.url} alt="Abstract neural network connection visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover" />
         </div>
-        <div className="grid gap-px border-t border-border bg-border sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset.url]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="flex items-center justify-between bg-background p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div>
         <div className="flex flex-col justify-between gap-2 border-t border-border px-6 py-5 font-mono text-[8px] uppercase text-muted-foreground sm:flex-row"><span>© 2026 Priyanshu Kalondia</span><span>AI / ML Engineer · Delhi, India</span></div>
       </footer>
     </main>
