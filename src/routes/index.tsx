@@ -212,12 +212,12 @@ function Portfolio() {
             <div><p className="font-mono text-[9px] uppercase text-accent">Technical arsenal / full résumé index</p><h3 className="mt-4 font-display text-4xl uppercase leading-none md:text-6xl">Skills matrix</h3></div>
             <p className="max-w-sm font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">From model research and retrieval architecture to production APIs, observability, and deployment.</p>
           </div>
-          <div className="grid md:grid-cols-2 xl:grid-cols-12">
+          <div className="stage-3d grid gap-5 pt-6 md:grid-cols-2 xl:grid-cols-12">
             {skillGroups.map((group, groupIndex) => {
               const Icon = group.icon;
               const span = groupIndex < 2 ? "xl:col-span-6" : "xl:col-span-4";
               return (
-                <article key={group.title} className={`group relative overflow-hidden border-b border-border p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_14px_44px_-14px_rgba(255,255,255,0.12)] md:p-10 md:odd:border-r xl:border-r ${span}`}>
+                <article key={group.title} className={`box-frame box-3d group relative overflow-hidden p-8 md:p-10 ${span}`}>
                   <div className="pointer-events-none absolute -bottom-8 -right-2 font-display text-[9rem] leading-none text-foreground/[0.035] transition-all duration-500 group-hover:-translate-y-3">{group.index}</div>
                   <div className="relative z-10 flex items-start justify-between border-b border-current/20 pb-6">
                     <div><span className="font-mono text-[9px] opacity-60">MODULE_{group.index}</span><h4 className="mt-2 font-display text-2xl uppercase md:text-3xl">{group.title}</h4></div>
