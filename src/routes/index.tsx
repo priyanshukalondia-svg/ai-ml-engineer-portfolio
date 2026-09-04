@@ -132,7 +132,7 @@ function Project({ project, reverse = false }: { project: (typeof primaryProject
 
 function Experience({ experience }: { experience: (typeof experiences)[number] }) {
   return (
-    <article className="grid border-b border-border lg:grid-cols-12">
+    <article className="box-3d grid border border-border bg-card/40 lg:grid-cols-12">
       <div className="flex flex-col justify-between border-b border-border p-8 md:p-14 lg:col-span-3 lg:border-b-0 lg:border-r">
         <p className="font-mono text-[10px] uppercase text-accent">{experience.date}</p>
         <p className="mt-8 font-mono text-[9px] uppercase text-muted-foreground lg:mt-0">{experience.org}</p>
@@ -196,10 +196,10 @@ function Portfolio() {
       <section id="about" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="01" label="Profile" title="Built for production" />
         <div className="grid lg:grid-cols-12">
-          <div className="border-b border-border p-8 md:p-14 lg:col-span-8 lg:border-r">
+          <div className="box-frame p-8 md:p-14 lg:col-span-8">
             <p className="max-w-3xl font-mono text-lg font-normal leading-relaxed md:text-xl">I don't just train models—I ship systems. My work sits between research and production: MLOps pipelines that heal themselves, agentic retrieval that reasons across sources, and real-time risk engines that explain every decision.</p>
-            <div className="mt-20 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
-              {[['10+','BUILT SYSTEMS'],['04','CORE DOMAINS'],['08+','MODELS DEPLOYED'],['2027','B.TECH GRAD']].map(([value,label]) => <div key={label} className="bg-background p-6"><p className="font-display text-3xl text-accent md:text-4xl">{value}</p><p className="mt-2 font-mono text-[8px] uppercase text-muted-foreground">{label}</p></div>)}
+            <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {[['10+','BUILT SYSTEMS'],['04','CORE DOMAINS'],['08+','MODELS DEPLOYED'],['2027','B.TECH GRAD']].map(([value,label]) => <div key={label} className="box-frame box-3d p-6"><p className="font-display text-3xl text-accent md:text-4xl">{value}</p><p className="mt-2 font-mono text-[8px] uppercase text-muted-foreground">{label}</p></div>)}
             </div>
           </div>
           <div className="system-grid flex min-h-72 flex-col justify-between p-8 md:p-14 lg:col-span-4">
