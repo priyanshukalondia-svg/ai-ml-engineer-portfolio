@@ -6,3 +6,4 @@
 - [x] Preserve six-project ordering, Show More behavior, résumé, and all supplied links
 - [x] Include hero, expertise, projects, experience/education, credentials, about, and contact
 - [x] Verify responsive rendering and interactions
+- [ ] Simplify Experience section to match Project section styling
