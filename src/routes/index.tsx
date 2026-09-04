@@ -82,9 +82,21 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
 
 function SectionHeading({ index, label, title }: { index: string; label: string; title: string }) {
   return (
-    <div className="grid gap-5 border-y border-border py-7 md:grid-cols-[180px_1fr] md:items-end">
+    <div className="grid gap-6 border-y border-border py-9 md:grid-cols-[180px_1fr] md:items-end md:py-12">
       <div className="font-mono text-[10px] uppercase text-muted-foreground">[{index}] / {label}</div>
       <h2 className="font-display text-4xl uppercase leading-[0.9] md:text-7xl lg:text-8xl">{title}</h2>
+    </div>
+  );
+}
+
+function SectionBreak({ index, label }: { index: string; label: string }) {
+  return (
+    <div className="mx-auto max-w-[1500px] border-x border-b border-border px-5 py-8 md:px-10 md:py-12">
+      <div className="flex items-center gap-4">
+        <span className="size-2.5 bg-accent" aria-hidden="true" />
+        <span className="font-mono text-[9px] uppercase text-muted-foreground">End of section [{index}] / {label}</span>
+        <div className="h-px flex-1 bg-border" />
+      </div>
     </div>
   );
 }
@@ -96,16 +108,16 @@ function Project({ project, reverse = false }: { project: (typeof primaryProject
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
         <img src={project.image} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] h-full w-full object-cover grayscale transition duration-700 hover:grayscale-0" />
       </div>
-      <div className={`flex flex-col justify-between p-6 md:p-10 lg:col-span-5 ${reverse ? "lg:order-1" : ""}`}>
+      <div className={`flex flex-col justify-between p-8 md:p-14 lg:col-span-5 ${reverse ? "lg:order-1" : ""}`}>
         <div>
           <div className="flex items-center justify-between font-mono text-[10px] text-muted-foreground"><span>PROJECT_{project.number}</span><span className="text-accent">SYSTEM ACTIVE</span></div>
-          <h3 className="mt-10 font-display text-4xl uppercase leading-[0.92] md:text-6xl">{project.title}</h3>
-          <p className="mt-3 font-mono text-[10px] uppercase text-accent">{project.subtitle}</p>
-          <p className="mt-7 max-w-[48ch] text-base leading-relaxed text-muted-foreground">{project.description}</p>
+          <h3 className="mt-12 font-display text-4xl uppercase leading-[0.92] md:text-6xl">{project.title}</h3>
+          <p className="mt-4 font-mono text-[10px] uppercase text-accent">{project.subtitle}</p>
+          <p className="mt-8 max-w-[48ch] text-base leading-relaxed text-muted-foreground">{project.description}</p>
         </div>
-        <div className="mt-12 border-t border-border pt-5">
-          <p className="mb-5 font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">{project.stack}</p>
-          <div className="flex gap-7"><ExternalLink href={project.live}>Live system</ExternalLink><ExternalLink href={project.github}>Source code</ExternalLink></div>
+        <div className="mt-14 border-t border-border pt-6">
+          <p className="mb-6 font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">{project.stack}</p>
+          <div className="flex gap-8"><ExternalLink href={project.live}>Live system</ExternalLink><ExternalLink href={project.github}>Source code</ExternalLink></div>
         </div>
       </div>
     </article>
@@ -124,7 +136,7 @@ function Portfolio() {
         </nav>
       </header>
 
-      <section className="system-grid relative mx-auto min-h-[820px] max-w-[1500px] overflow-hidden border-x border-border px-5 pb-10 pt-16 md:px-10 lg:px-14">
+      <section className="system-grid relative mx-auto min-h-[820px] max-w-[1500px] overflow-hidden border-x border-border px-5 pb-16 pt-20 md:px-10 md:pb-20 md:pt-24 lg:px-14">
         <div className="absolute right-0 top-0 h-full w-[46%] opacity-45 [mask-image:linear-gradient(to_left,black,transparent)]"><img src={aiSystemHero.url} alt="Abstract artificial intelligence inference architecture" width={1920} height={1080} className="h-full w-full object-cover" /></div>
         <div className="relative z-10 flex min-h-[730px] flex-col justify-between">
           <div className="system-reveal flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6 font-mono text-[9px] uppercase text-muted-foreground">
@@ -148,22 +160,22 @@ function Portfolio() {
         </div>
       </div>
 
-      <section id="about" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border">
+      <section id="about" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="01" label="Profile" title="Built for production" />
         <div className="grid lg:grid-cols-12">
-          <div className="border-b border-border p-6 md:p-10 lg:col-span-8 lg:border-r">
+          <div className="border-b border-border p-8 md:p-14 lg:col-span-8 lg:border-r">
             <p className="max-w-3xl text-2xl font-semibold leading-tight md:text-4xl">I connect machine learning research with the systems discipline required to make it useful, observable, and resilient.</p>
-            <div className="mt-14 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
-              {[['06','BUILT SYSTEMS'],['04','CORE DOMAINS'],['32K+','ROWS ANALYZED'],['2027','B.TECH GRAD']].map(([value,label]) => <div key={label} className="bg-background p-5"><p className="font-display text-3xl text-accent md:text-4xl">{value}</p><p className="mt-2 font-mono text-[8px] uppercase text-muted-foreground">{label}</p></div>)}
+            <div className="mt-20 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
+              {[['06','BUILT SYSTEMS'],['04','CORE DOMAINS'],['32K+','ROWS ANALYZED'],['2027','B.TECH GRAD']].map(([value,label]) => <div key={label} className="bg-background p-6"><p className="font-display text-3xl text-accent md:text-4xl">{value}</p><p className="mt-2 font-mono text-[8px] uppercase text-muted-foreground">{label}</p></div>)}
             </div>
           </div>
-          <div className="system-grid flex min-h-64 flex-col justify-between p-6 md:p-10 lg:col-span-4">
+          <div className="system-grid flex min-h-72 flex-col justify-between p-8 md:p-14 lg:col-span-4">
             <div className="flex items-center gap-3 font-mono text-[10px] uppercase text-muted-foreground"><MapPin className="size-4 text-accent" /> Delhi, India</div>
             <div><p className="font-display text-6xl text-accent md:text-7xl">48</p><p className="mt-2 font-mono text-[9px] uppercase text-muted-foreground">Tools, methods & technologies in active stack</p></div>
           </div>
         </div>
-        <div className="border-t border-border">
-          <div className="flex flex-col justify-between gap-5 border-b border-border p-6 md:flex-row md:items-end md:p-10">
+        <div className="mt-16 border-t border-border">
+          <div className="flex flex-col justify-between gap-5 border-b border-border p-8 md:flex-row md:items-end md:p-14">
             <div><p className="font-mono text-[9px] uppercase text-accent">Technical arsenal / full résumé index</p><h3 className="mt-4 font-display text-4xl uppercase leading-none md:text-6xl">Skills matrix</h3></div>
             <p className="max-w-sm font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">From model research and retrieval architecture to production APIs, observability, and deployment.</p>
           </div>
@@ -172,16 +184,16 @@ function Portfolio() {
               const Icon = group.icon;
               const span = groupIndex === 2 ? "xl:col-span-5" : groupIndex < 2 ? "xl:col-span-6" : groupIndex === 3 ? "xl:col-span-4" : "xl:col-span-3";
               return (
-                <article key={group.title} className={`group relative overflow-hidden border-b border-border p-6 transition-colors duration-500 hover:bg-accent hover:text-accent-foreground md:p-8 md:odd:border-r xl:border-r ${span}`}>
+                <article key={group.title} className={`group relative overflow-hidden border-b border-border p-8 transition-colors duration-500 hover:bg-accent hover:text-accent-foreground md:p-10 md:odd:border-r xl:border-r ${span}`}>
                   <div className="pointer-events-none absolute -bottom-8 -right-2 font-display text-[9rem] leading-none text-foreground/[0.035] transition-all duration-500 group-hover:-translate-y-3 group-hover:text-accent-foreground/10">{group.index}</div>
-                  <div className="relative z-10 flex items-start justify-between border-b border-current/20 pb-5">
+                  <div className="relative z-10 flex items-start justify-between border-b border-current/20 pb-6">
                     <div><span className="font-mono text-[9px] opacity-60">MODULE_{group.index}</span><h4 className="mt-2 font-display text-2xl uppercase md:text-3xl">{group.title}</h4></div>
                     <Icon className="size-7 text-accent transition-colors group-hover:text-accent-foreground" strokeWidth={1.4} />
                   </div>
-                  <ul className="relative z-10 mt-6 flex flex-wrap gap-2" aria-label={`${group.title} skills`}>
+                  <ul className="relative z-10 mt-8 flex flex-wrap gap-2" aria-label={`${group.title} skills`}>
                     {group.skills.map((skill) => <li key={skill} className="border border-current/20 px-2.5 py-1.5 font-mono text-[9px] uppercase transition-transform duration-300 group-hover:-translate-y-0.5">{skill}</li>)}
                   </ul>
-                  <div className="relative z-10 mt-8 flex items-center justify-between font-mono text-[8px] uppercase opacity-60"><span>Capability set</span><span>{String(group.skills.length).padStart(2, "0")} entries</span></div>
+                  <div className="relative z-10 mt-10 flex items-center justify-between font-mono text-[8px] uppercase opacity-60"><span>Capability set</span><span>{String(group.skills.length).padStart(2, "0")} entries</span></div>
                 </article>
               );
             })}
@@ -189,36 +201,42 @@ function Portfolio() {
         </div>
       </section>
 
+      <SectionBreak index="01" label="Profile" />
+
       <div className="relative mx-auto max-w-[1500px] overflow-hidden border-x border-border">
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
         <img src={dividerDataAI.url} alt="Abstract data and AI visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
       </div>
 
-      <section id="projects" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border">
+      <section id="projects" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="02" label="Selected work" title="Deployed intelligence" />
-        <div className="space-y-4">{primaryProjects.map((project, index) => <Project key={project.title} project={project} reverse={index % 2 === 1} />)}</div>
-        {showMore && <div id="additional-projects" className="system-reveal grid gap-4 border-b border-border p-4 lg:grid-cols-3">{additionalProjects.map((project) => <article key={project.title} className="group flex flex-col border border-border"><div className="overflow-hidden"><img src={project.image.url} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-6 md:p-8"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article>)}</div>}
-        <div className="flex justify-center border-b border-border py-12"><Button variant="journal" onClick={() => setShowMore((value) => !value)} aria-expanded={showMore} aria-controls="additional-projects">{showMore ? "Collapse archive" : "Show 03 more projects"}<ArrowDown className={showMore ? "rotate-180" : ""} /></Button></div>
+        <div className="space-y-10 md:space-y-14">{primaryProjects.map((project, index) => <Project key={project.title} project={project} reverse={index % 2 === 1} />)}</div>
+        {showMore && <div id="additional-projects" className="system-reveal mt-14 grid gap-6 border-b border-border p-4 lg:grid-cols-3">{additionalProjects.map((project) => <article key={project.title} className="group flex flex-col border border-border"><div className="overflow-hidden"><img src={project.image.url} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-8 md:p-10"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article>)}</div>}
+        <div className="flex justify-center border-b border-border py-16 md:py-20"><Button variant="journal" onClick={() => setShowMore((value) => !value)} aria-expanded={showMore} aria-controls="additional-projects">{showMore ? "Collapse archive" : "Show 03 more projects"}<ArrowDown className={showMore ? "rotate-180" : ""} /></Button></div>
       </section>
+
+      <SectionBreak index="02" label="Selected work" />
 
       <div className="relative mx-auto max-w-[1500px] overflow-hidden border-x border-border">
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
         <img src={dividerMLPipeline.url} alt="Abstract machine learning pipeline visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
       </div>
 
-      <section id="record" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border">
+      <section id="record" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="03" label="Experience" title="The operating record" />
         <div className="grid lg:grid-cols-12">
-          <div className="border-b border-border p-6 md:p-10 lg:col-span-7 lg:border-b-0 lg:border-r">
+          <div className="border-b border-border p-8 md:p-14 lg:col-span-7 lg:border-b-0 lg:border-r">
             <p className="font-mono text-[10px] uppercase text-accent">Experience log</p>
-            <div className="mt-10">{[["2026.06—07","Data Analyst Intern","V Devi Foundation","Built a centralized donor data system, automated CSV/Excel validation, and developed Power BI and Streamlit dashboards."],["2026.01—03","Lead & Co-Founder","Insanzia Labs","Designed database schemas and frontend data flows, integrated REST APIs, and monitored product usage."]].map(([date,role,org,text]) => <article key={role} className="grid gap-4 border-t border-border py-7 sm:grid-cols-[130px_1fr]"><span className="font-mono text-[9px] text-muted-foreground">{date}</span><div><h3 className="text-xl font-bold uppercase">{role}</h3><p className="mt-1 font-mono text-[9px] uppercase text-accent">{org}</p><p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">{text}</p></div></article>)}</div>
+            <div className="mt-14">{[["2026.06—07","Data Analyst Intern","V Devi Foundation","Built a centralized donor data system, automated CSV/Excel validation, and developed Power BI and Streamlit dashboards."],["2026.01—03","Lead & Co-Founder","Insanzia Labs","Designed database schemas and frontend data flows, integrated REST APIs, and monitored product usage."]].map(([date,role,org,text]) => <article key={role} className="grid gap-5 border-t border-border py-10 sm:grid-cols-[130px_1fr]"><span className="font-mono text-[9px] text-muted-foreground">{date}</span><div><h3 className="text-xl font-bold uppercase">{role}</h3><p className="mt-1 font-mono text-[9px] uppercase text-accent">{org}</p><p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">{text}</p></div></article>)}</div>
           </div>
           <div className="grid lg:col-span-5">
-            <div className="border-b border-border p-6 md:p-10"><p className="font-mono text-[10px] uppercase text-accent">Education</p><h3 className="mt-8 font-display text-3xl uppercase">B.Tech Information Technology</h3><p className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">GGSIPU (USICT) / 2023—2027</p><p className="mt-5 text-sm text-muted-foreground">Specialization in Artificial Intelligence and Machine Learning.</p></div>
-            <div className="p-6 md:p-10"><p className="font-mono text-[10px] uppercase text-accent">Recognition</p><ul className="mt-8 space-y-6 text-sm leading-relaxed text-muted-foreground"><li className="border-l-2 border-accent pl-4"><strong className="block text-foreground">Top 20% nationwide</strong>Top 5,000 of 25,000 teams at BuildWithIndia–HackWithIndia.</li><li className="border-l-2 border-accent pl-4"><strong className="block text-foreground">GDG Solution Challenge</strong>Built an AI solution aligned with UN Sustainable Development Goals.</li></ul></div>
+            <div className="border-b border-border p-8 md:p-14"><p className="font-mono text-[10px] uppercase text-accent">Education</p><h3 className="mt-10 font-display text-3xl uppercase">B.Tech Information Technology</h3><p className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">GGSIPU (USICT) / 2023—2027</p><p className="mt-6 text-sm text-muted-foreground">Specialization in Artificial Intelligence and Machine Learning.</p></div>
+            <div className="p-8 md:p-14"><p className="font-mono text-[10px] uppercase text-accent">Recognition</p><ul className="mt-10 space-y-8 text-sm leading-relaxed text-muted-foreground"><li className="border-l-2 border-accent pl-5"><strong className="block text-foreground">Top 20% nationwide</strong>Top 5,000 of 25,000 teams at BuildWithIndia–HackWithIndia.</li><li className="border-l-2 border-accent pl-5"><strong className="block text-foreground">GDG Solution Challenge</strong>Built an AI solution aligned with UN Sustainable Development Goals.</li></ul></div>
           </div>
         </div>
       </section>
+
+      <SectionBreak index="03" label="Experience" />
 
       <div className="relative mx-auto max-w-[1500px] overflow-hidden border-x border-border">
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
