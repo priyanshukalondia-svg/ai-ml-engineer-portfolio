@@ -26,6 +26,6 @@ export const sendContactMessage = createServerFn({ method: "POST" })
       return { ok: true };
     } catch (e) {
       console.error("contact form error:", e);
-      throw new Error(`send failed: ${e instanceof Error ? e.message : String(e)}`);
+      throw new Error("Failed to send message");
     }
   });
