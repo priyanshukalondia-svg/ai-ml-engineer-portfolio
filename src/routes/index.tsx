@@ -172,7 +172,7 @@ function Portfolio() {
       <section className="system-grid relative mx-auto min-h-[820px] max-w-[1500px] overflow-hidden border-x border-border px-5 pb-16 pt-20 md:px-10 md:pb-20 md:pt-24 lg:px-14">
         <div className="absolute right-0 top-0 h-full w-[46%] opacity-45 [mask-image:linear-gradient(to_left,black,transparent)]"><img src={aiSystemHero.url} alt="Abstract artificial intelligence inference architecture" width={1920} height={1080} className="h-full w-full object-cover" /></div>
         <div className="relative z-10 flex min-h-[730px] flex-col justify-between">
-          <div className="system-reveal flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6 font-mono text-[9px] uppercase text-muted-foreground">
+          <div className="box-frame system-reveal flex flex-wrap items-center justify-between gap-4 p-4 font-mono text-[9px] uppercase text-muted-foreground">
             <span className="flex items-center gap-3"><span className="size-2 bg-accent" />Node status: available for opportunities</span><span>Delhi / India / 28.6139° N</span>
           </div>
           <div className="system-reveal max-w-[1200px] [animation-delay:120ms]">
@@ -180,9 +180,9 @@ function Portfolio() {
             <h1 className="-translate-y-2 font-display text-[2.6rem] uppercase leading-[0.78] sm:text-6xl md:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">Priyanshu Kalondia</h1>
             <div className="mt-6 flex items-center gap-5"><div className="h-px flex-1 bg-border" /><p className="max-w-xl text-right font-mono text-sm uppercase leading-relaxed md:text-lg">Engineering <span className="text-accent">intelligent systems</span> that learn, reason, and ship.</p></div>
           </div>
-          <div className="system-reveal grid gap-8 [animation-delay:240ms] md:grid-cols-12 md:items-end">
-            <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">I ship end-to-end AI systems: MLOps platforms that monitor, retrain, and rollback themselves; agentic RAG that reasons across documents; and real-time fraud detection that explains every risk score.</p>
-            <div className="flex flex-wrap gap-3 md:col-span-5 md:justify-end"><Button asChild><a href="#projects">View systems <ArrowDown /></a></Button><Button asChild variant="journal"><a href={resumeAsset.url} target="_blank" rel="noreferrer"><Download /> Résumé PDF</a></Button></div>
+          <div className="system-reveal grid gap-6 [animation-delay:240ms] md:grid-cols-12 md:items-stretch">
+            <p className="box-frame max-w-xl p-6 text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">I ship end-to-end AI systems: MLOps platforms that monitor, retrain, and rollback themselves; agentic RAG that reasons across documents; and real-time fraud detection that explains every risk score.</p>
+            <div className="box-frame flex flex-wrap items-center gap-3 p-6 md:col-span-5 md:justify-end"><Button asChild><a href="#projects">View systems <ArrowDown /></a></Button><Button asChild variant="journal"><a href={resumeAsset.url} target="_blank" rel="noreferrer"><Download /> Résumé PDF</a></Button></div>
           </div>
         </div>
       </section>
