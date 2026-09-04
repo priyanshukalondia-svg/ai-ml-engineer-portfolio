@@ -202,7 +202,7 @@ function Portfolio() {
           <div className="grid md:grid-cols-2 xl:grid-cols-12">
             {skillGroups.map((group, groupIndex) => {
               const Icon = group.icon;
-              const span = groupIndex === 2 ? "xl:col-span-5" : groupIndex < 2 ? "xl:col-span-6" : groupIndex === 3 ? "xl:col-span-4" : "xl:col-span-3";
+              const span = groupIndex < 2 ? "xl:col-span-6" : "xl:col-span-4";
               return (
                 <article key={group.title} className={`group relative overflow-hidden border-b border-border p-8 transition-colors duration-500 hover:bg-accent hover:text-accent-foreground md:p-10 md:odd:border-r xl:border-r ${span}`}>
                   <div className="pointer-events-none absolute -bottom-8 -right-2 font-display text-[9rem] leading-none text-foreground/[0.035] transition-all duration-500 group-hover:-translate-y-3 group-hover:text-accent-foreground/10">{group.index}</div>
