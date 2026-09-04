@@ -42,8 +42,8 @@ const additionalProjects = [
 ];
 
 const experiences = [
-  { number: "01", date: "2026.06—07", role: "Data Analyst Intern", org: "V Devi Foundation", description: "Built a centralized donor data system, automated CSV/Excel validation, and developed Power BI and Streamlit dashboards." },
-  { number: "02", date: "2026.01—03", role: "Lead & Co-Founder", org: "Insanzia Labs", description: "Designed database schemas and frontend data flows, integrated REST APIs, and monitored product usage." },
+  { number: "01", date: "2026.06—07", role: "Data Analyst Intern", org: "V Devi Foundation", description: "Built a centralized donor data system, automated CSV/Excel validation, and developed Power BI and Streamlit dashboards.", testimonial: { quote: "Priyanshu was a standout intern — reliable, detail-oriented, and quick to turn raw data into actionable dashboards. His work on the donor system directly improved our reporting workflow.", author: "Shaurya Shandaliya", title: "Project Mentor, V Devi Foundation" } },
+  { number: "02", date: "2026.01—03", role: "Lead & Co-Founder", org: "Insanzia Labs", description: "Designed database schemas and frontend data flows, integrated REST APIs, and monitored product usage.", testimonial: { quote: "Priyanshu is a great partner to work with. He brings strong ownership, clean engineering, and a product mindset that makes every collaboration smoother.", author: "Ankit Kumar Mishra", title: "Founder, Insanzia Labs" } },
 ];
 
 const capabilities = ["MACHINE LEARNING", "GENERATIVE AI", "MLOPS", "AGENTIC SYSTEMS", "DATA ENGINEERING", "EXPLAINABLE AI"];
@@ -139,6 +139,18 @@ function Experience({ experience }: { experience: (typeof experiences)[number] }
       <div className="p-8 md:p-14 lg:col-span-9">
         <h3 className="font-display text-3xl uppercase leading-[0.92] md:text-5xl">{experience.role}</h3>
         <p className="mt-6 max-w-[60ch] text-base leading-relaxed text-muted-foreground">{experience.description}</p>
+        {experience.testimonial && (
+          <div className="mt-8 border-l-2 border-accent bg-accent/5 p-6">
+            <p className="max-w-[60ch] font-mono text-sm leading-relaxed text-foreground">“{experience.testimonial.quote}”</p>
+            <div className="mt-4 flex items-center gap-3">
+              <div className="h-px w-8 bg-accent" />
+              <div>
+                <p className="font-mono text-[10px] uppercase text-foreground">{experience.testimonial.author}</p>
+                <p className="font-mono text-[9px] uppercase text-muted-foreground">{experience.testimonial.title}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </article>
   );
