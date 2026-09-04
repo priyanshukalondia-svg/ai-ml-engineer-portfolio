@@ -96,7 +96,7 @@ function Portfolio() {
           </div>
           <div className="system-reveal max-w-[1200px] [animation-delay:120ms]">
             <p className="mb-6 font-mono text-[10px] uppercase text-accent">AI & ML Engineer / Portfolio 2026</p>
-            <h1 className="font-display text-[3.1rem] uppercase leading-[0.78] sm:text-7xl md:text-8xl lg:text-[8rem] xl:text-[9rem]">Priyanshu</h1>
+            <h1 className="-translate-y-2 font-display text-[2.6rem] uppercase leading-[0.78] sm:text-6xl md:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">Priyanshu Kalondia</h1>
             <div className="mt-6 flex items-center gap-5"><div className="h-px flex-1 bg-border" /><p className="max-w-xl text-right font-mono text-sm uppercase leading-relaxed md:text-lg">Engineering <span className="text-accent">intelligent systems</span> from model to production.</p></div>
           </div>
           <div className="system-reveal grid gap-8 [animation-delay:240ms] md:grid-cols-12 md:items-end">
