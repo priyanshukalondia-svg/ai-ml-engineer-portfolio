@@ -215,6 +215,8 @@ function Portfolio() {
         <div className="flex justify-center border-b border-border py-16 md:py-20"><Button variant="journal" onClick={() => setShowMore((value) => !value)} aria-expanded={showMore} aria-controls="additional-projects">{showMore ? "Collapse archive" : "Show 03 more projects"}<ArrowDown className={showMore ? "rotate-180" : ""} /></Button></div>
       </section>
 
+      <SectionBreak index="02" label="Selected work" />
+
       <div className="relative mx-auto max-w-[1500px] overflow-hidden border-x border-border">
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
         <img src={dividerMLPipeline.url} alt="Abstract machine learning pipeline visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
