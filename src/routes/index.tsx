@@ -2,10 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Download, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 
-import aiSystemHero from "@/assets/ai-system-hero.jpg";
-import customerSegmentation from "@/assets/customer-segmentation.jpg";
-import ecommerceIntelligence from "@/assets/ecommerce-intelligence.jpg";
-import listeningAnalysis from "@/assets/listening-analysis.jpg";
+import aiSystemHero from "@/assets/ai-system-hero.jpg.asset.json";
+import customerSegmentation from "@/assets/customer-segmentation.jpg.asset.json";
+import ecommerceIntelligence from "@/assets/ecommerce-intelligence.jpg.asset.json";
+import listeningAnalysis from "@/assets/listening-analysis.jpg.asset.json";
 import ragImage from "@/assets/agentic-rag.png.asset.json";
 import resumeAsset from "@/assets/priyanshu-kalondia-resume.pdf.asset.json";
 import sentinelImage from "@/assets/sentinelml.png.asset.json";
@@ -89,7 +89,7 @@ function Portfolio() {
       </header>
 
       <section className="system-grid relative mx-auto min-h-[820px] max-w-[1500px] overflow-hidden border-x border-border px-5 pb-10 pt-16 md:px-10 lg:px-14">
-        <div className="absolute right-0 top-0 h-full w-[46%] opacity-45 [mask-image:linear-gradient(to_left,black,transparent)]"><img src={aiSystemHero} alt="Abstract artificial intelligence inference architecture" width={1920} height={1080} className="h-full w-full object-cover" /></div>
+        <div className="absolute right-0 top-0 h-full w-[46%] opacity-45 [mask-image:linear-gradient(to_left,black,transparent)]"><img src={aiSystemHero.url} alt="Abstract artificial intelligence inference architecture" width={1920} height={1080} className="h-full w-full object-cover" /></div>
         <div className="relative z-10 flex min-h-[730px] flex-col justify-between">
           <div className="system-reveal flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6 font-mono text-[9px] uppercase text-muted-foreground">
             <span className="flex items-center gap-3"><span className="size-2 bg-accent" />Node status: available for opportunities</span><span>Delhi / India / 28.6139° N</span>
@@ -131,7 +131,7 @@ function Portfolio() {
       <section id="projects" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border">
         <SectionHeading index="02" label="Selected work" title="Deployed intelligence" />
         {primaryProjects.map((project, index) => <Project key={project.title} project={project} reverse={index % 2 === 1} />)}
-        {showMore && <div id="additional-projects" className="system-reveal grid border-b border-border lg:grid-cols-3">{additionalProjects.map((project, index) => <article key={project.title} className={`group flex flex-col ${index < 2 ? "border-b border-border lg:border-b-0 lg:border-r" : ""}`}><div className="overflow-hidden"><img src={project.image} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-6 md:p-8"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article>)}</div>}
+        {showMore && <div id="additional-projects" className="system-reveal grid border-b border-border lg:grid-cols-3">{additionalProjects.map((project, index) => <article key={project.title} className={`group flex flex-col ${index < 2 ? "border-b border-border lg:border-b-0 lg:border-r" : ""}`}><div className="overflow-hidden"><img src={project.image.url} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-6 md:p-8"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article>)}</div>}
         <div className="flex justify-center border-b border-border py-12"><Button variant="journal" onClick={() => setShowMore((value) => !value)} aria-expanded={showMore} aria-controls="additional-projects">{showMore ? "Collapse archive" : "Show 03 more projects"}<ArrowDown className={showMore ? "rotate-180" : ""} /></Button></div>
       </section>
 
