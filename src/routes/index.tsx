@@ -160,7 +160,7 @@ function Portfolio() {
         </div>
       </div>
 
-      <section id="about" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border">
+      <section id="about" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="01" label="Profile" title="Built for production" />
         <div className="grid lg:grid-cols-12">
           <div className="border-b border-border p-6 md:p-10 lg:col-span-8 lg:border-r">
