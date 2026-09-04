@@ -130,12 +130,22 @@ function Portfolio() {
         </div>
       </section>
 
+      <div className="relative mx-auto max-w-[1500px] overflow-hidden border-x border-border">
+        <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
+        <img src={dividerDataAI.url} alt="Abstract data and AI visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
+      </div>
+
       <section id="projects" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border">
         <SectionHeading index="02" label="Selected work" title="Deployed intelligence" />
         <div className="space-y-4">{primaryProjects.map((project, index) => <Project key={project.title} project={project} reverse={index % 2 === 1} />)}</div>
         {showMore && <div id="additional-projects" className="system-reveal grid gap-4 border-b border-border p-4 lg:grid-cols-3">{additionalProjects.map((project) => <article key={project.title} className="group flex flex-col border border-border"><div className="overflow-hidden"><img src={project.image.url} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-6 md:p-8"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article>)}</div>}
         <div className="flex justify-center border-b border-border py-12"><Button variant="journal" onClick={() => setShowMore((value) => !value)} aria-expanded={showMore} aria-controls="additional-projects">{showMore ? "Collapse archive" : "Show 03 more projects"}<ArrowDown className={showMore ? "rotate-180" : ""} /></Button></div>
       </section>
+
+      <div className="relative mx-auto max-w-[1500px] overflow-hidden border-x border-border">
+        <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
+        <img src={dividerMLPipeline.url} alt="Abstract machine learning pipeline visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
+      </div>
 
       <section id="record" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border">
         <SectionHeading index="03" label="Experience" title="The operating record" />
