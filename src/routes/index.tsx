@@ -202,13 +202,13 @@ function Portfolio() {
               {[['10+','BUILT SYSTEMS'],['04','CORE DOMAINS'],['08+','MODELS DEPLOYED'],['2027','B.TECH GRAD']].map(([value,label]) => <div key={label} className="box-frame box-3d p-6"><p className="font-display text-3xl text-accent md:text-4xl">{value}</p><p className="mt-2 font-mono text-[8px] uppercase text-muted-foreground">{label}</p></div>)}
             </div>
           </div>
-          <div className="system-grid flex min-h-72 flex-col justify-between p-8 md:p-14 lg:col-span-4">
+          <div className="box-frame system-grid flex min-h-72 flex-col justify-between p-8 md:p-14 lg:col-span-4">
             <div className="flex items-center gap-3 font-mono text-[10px] uppercase text-muted-foreground"><MapPin className="size-4 text-accent" /> Delhi, India</div>
             <div><p className="font-display text-6xl text-accent md:text-7xl">48</p><p className="mt-2 font-mono text-[9px] uppercase text-muted-foreground">Tools, methods & technologies in active stack</p></div>
           </div>
         </div>
-        <div className="mt-16 border-t border-border">
-          <div className="flex flex-col justify-between gap-5 border-b border-border p-8 md:flex-row md:items-end md:p-14">
+        <div className="mt-16">
+          <div className="box-frame flex flex-col justify-between gap-5 p-8 md:flex-row md:items-end md:p-14">
             <div><p className="font-mono text-[9px] uppercase text-accent">Technical arsenal / full résumé index</p><h3 className="mt-4 font-display text-4xl uppercase leading-none md:text-6xl">Skills matrix</h3></div>
             <p className="max-w-sm font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">From model research and retrieval architecture to production APIs, observability, and deployment.</p>
           </div>
