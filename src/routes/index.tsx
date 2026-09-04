@@ -41,6 +41,11 @@ const additionalProjects = [
   { number: "06", title: "Spotify Listening Analysis", image: listeningAnalysis, alt: "Abstract listening behavior and waveform analysis", description: "An exploration of streaming behavior and audio features—mapping mood against tempo, energy, danceability, and listening patterns.", stack: "SQL / Python / Seaborn", github: "https://github.com/priyanshukalondia-svg/spotify_mysql_project" },
 ];
 
+const experiences = [
+  { number: "01", date: "2026.06—07", role: "Data Analyst Intern", org: "V Devi Foundation", description: "Built a centralized donor data system, automated CSV/Excel validation, and developed Power BI and Streamlit dashboards." },
+  { number: "02", date: "2026.01—03", role: "Lead & Co-Founder", org: "Insanzia Labs", description: "Designed database schemas and frontend data flows, integrated REST APIs, and monitored product usage." },
+];
+
 const capabilities = ["MACHINE LEARNING", "GENERATIVE AI", "MLOPS", "AGENTIC SYSTEMS", "DATA ENGINEERING", "EXPLAINABLE AI"];
 
 const skillGroups = [
