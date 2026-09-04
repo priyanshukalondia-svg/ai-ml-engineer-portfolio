@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import aiSystemHero from "@/assets/ai-system-hero.jpg.asset.json";
 import customerSegmentation from "@/assets/customer-segmentation.jpg.asset.json";
+import dividerAIEngineering from "@/assets/divider-ai-engineering.jpg.asset.json";
 import dividerDataAI from "@/assets/divider-data-ai.jpg.asset.json";
 import dividerMLPipeline from "@/assets/divider-ml-pipeline.jpg.asset.json";
 import ecommerceIntelligence from "@/assets/ecommerce-intelligence.jpg.asset.json";
