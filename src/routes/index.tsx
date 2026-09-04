@@ -86,6 +86,24 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
   return <a href={href} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase text-foreground transition-colors hover:text-accent">{children}<ArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>;
 }
 
+function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.12 });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+  return <div ref={ref} className={`scroll-reveal ${visible ? "is-visible" : ""} ${className}`}>{children}</div>;
+}
+
 function SectionHeading({ index, label, title }: { index: string; label: string; title: string }) {
   return (
     <div className="grid gap-6 border border-border bg-card/40 py-9 md:grid-cols-[180px_1fr] md:items-end md:py-12 md:px-8">
