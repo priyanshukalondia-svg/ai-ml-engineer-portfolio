@@ -92,8 +92,8 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0]?.isIntersecting) {
         setVisible(true);
         observer.disconnect();
       }
