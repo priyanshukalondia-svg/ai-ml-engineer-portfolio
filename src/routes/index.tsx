@@ -272,7 +272,7 @@ function Portfolio() {
       <section id="projects" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="02" label="Selected work" title="Deployed intelligence" />
         <div className="space-y-10 md:space-y-14">{primaryProjects.map((project, index) => <Project key={project.title} project={project} reverse={index % 2 === 1} />)}</div>
-        {showMore && <div id="additional-projects" className="system-reveal mt-14 grid gap-6 border-b border-border p-4 lg:grid-cols-3">{additionalProjects.map((project) => <article key={project.title} className="box-frame box-3d group flex flex-col"><div className="overflow-hidden"><img src={project.image.url} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-8 md:p-10"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article>)}</div>}
+        {showMore && <div id="additional-projects" className="system-reveal mt-14 grid gap-6 border-b border-border p-4 lg:grid-cols-3">{additionalProjects.map((project) => <Reveal key={project.title}><article className="box-frame box-3d group flex h-full flex-col"><div className="overflow-hidden"><img src={project.image.url} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-8 md:p-10"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article>)}</div>}
         <div className="flex justify-center border-b border-border py-16 md:py-20"><Button variant="journal" onClick={() => setShowMore((value) => !value)} aria-expanded={showMore} aria-controls="additional-projects">{showMore ? "Collapse archive" : "Show 03 more projects"}<ArrowDown className={showMore ? "rotate-180" : ""} /></Button></div>
       </section>
 
@@ -287,13 +287,16 @@ function Portfolio() {
         <SectionHeading index="03" label="Experience" title="The operating record" />
         <div className="space-y-10 md:space-y-14">{experiences.map((experience) => <Experience key={experience.role} experience={experience} />)}</div>
         <div className="stage-3d mt-14 grid gap-6 lg:grid-cols-2">
-          <article className="box-frame box-3d group flex flex-col p-8 md:p-10">
+          <Reveal>
+          <article className="box-frame box-3d group flex h-full flex-col p-8 md:p-10">
             <span className="font-mono text-[9px] text-accent">EDU_01</span>
             <h3 className="mt-5 font-display text-3xl uppercase leading-none">B.Tech Information Technology</h3>
             <p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">GGSIPU (USICT) / 2023—2027</p>
             <p className="flex-1 text-sm leading-relaxed text-muted-foreground">Specialization in Artificial Intelligence and Machine Learning.</p>
           </article>
-          <article className="box-frame box-3d group flex flex-col p-8 md:p-10">
+          </Reveal>
+          <Reveal>
+          <article className="box-frame box-3d group flex h-full flex-col p-8 md:p-10">
             <span className="font-mono text-[9px] text-accent">REC_01</span>
             <h3 className="mt-5 font-display text-3xl uppercase leading-none">Recognition</h3>
             <ul className="mt-5 flex-1 space-y-4 text-sm leading-relaxed text-muted-foreground">
@@ -301,6 +304,7 @@ function Portfolio() {
               <li className="border-l-2 border-accent pl-4"><strong className="block text-foreground">GDG Solution Challenge</strong>Built an AI solution aligned with UN Sustainable Development Goals.</li>
             </ul>
           </article>
+          </Reveal>
         </div>
       </section>
 
@@ -312,11 +316,13 @@ function Portfolio() {
       </div>
 
       <footer id="contact" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-t border-border">
+        <Reveal>
         <div className="box-frame system-grid m-4 p-6 py-20 md:m-6 md:p-12 md:py-28">
           <p className="font-mono text-[10px] uppercase text-accent">[04] / Open channel</p>
           <h2 className="mt-8 max-w-6xl font-display text-[13vw] uppercase leading-[0.8] md:text-8xl lg:text-[9rem]">Let's build what learns.</h2>
           <a href="mailto:priyanshukalondia@gmail.com" className="mt-12 inline-flex max-w-full items-center gap-3 break-all border-b border-foreground pb-2 font-mono text-xs transition-colors hover:border-accent hover:text-accent sm:text-base"><Mail className="size-5 shrink-0" />priyanshukalondia@gmail.com</a>
         </div>
+        </Reveal>
         <div className="stage-3d grid gap-3 p-4 sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset.url]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="box-frame box-3d flex items-center justify-between p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div>
         <div className="relative mt-2 overflow-hidden border-t border-border">
           <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
