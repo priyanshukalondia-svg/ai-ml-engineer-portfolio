@@ -136,7 +136,7 @@ function Portfolio() {
         </nav>
       </header>
 
-      <section className="system-grid relative mx-auto min-h-[820px] max-w-[1500px] overflow-hidden border-x border-border px-5 pb-10 pt-16 md:px-10 lg:px-14">
+      <section className="system-grid relative mx-auto min-h-[820px] max-w-[1500px] overflow-hidden border-x border-border px-5 pb-16 pt-20 md:px-10 md:pb-20 md:pt-24 lg:px-14">
         <div className="absolute right-0 top-0 h-full w-[46%] opacity-45 [mask-image:linear-gradient(to_left,black,transparent)]"><img src={aiSystemHero.url} alt="Abstract artificial intelligence inference architecture" width={1920} height={1080} className="h-full w-full object-cover" /></div>
         <div className="relative z-10 flex min-h-[730px] flex-col justify-between">
           <div className="system-reveal flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6 font-mono text-[9px] uppercase text-muted-foreground">
