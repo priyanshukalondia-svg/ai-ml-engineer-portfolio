@@ -145,10 +145,10 @@ function Portfolio() {
           <div className="system-reveal max-w-[1200px] [animation-delay:120ms]">
             <p className="mb-6 font-mono text-[10px] uppercase text-accent">AI & ML Engineer / Portfolio 2026</p>
             <h1 className="-translate-y-2 font-display text-[2.6rem] uppercase leading-[0.78] sm:text-6xl md:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">Priyanshu Kalondia</h1>
-            <div className="mt-6 flex items-center gap-5"><div className="h-px flex-1 bg-border" /><p className="max-w-xl text-right font-mono text-sm uppercase leading-relaxed md:text-lg">Engineering <span className="text-accent">intelligent systems</span> from model to production.</p></div>
+            <div className="mt-6 flex items-center gap-5"><div className="h-px flex-1 bg-border" /><p className="max-w-xl text-right font-mono text-sm uppercase leading-relaxed md:text-lg">Building <span className="text-accent">self-healing ML, agentic RAG,</span> and real-time risk systems.</p></div>
           </div>
           <div className="system-reveal grid gap-8 [animation-delay:240ms] md:grid-cols-12 md:items-end">
-            <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">I build production-oriented machine learning and generative AI systems—from self-healing MLOps and agentic retrieval to real-time fraud detection.</p>
+            <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">I ship end-to-end AI systems: MLOps platforms that monitor, retrain, and rollback themselves; agentic RAG that reasons across documents; and real-time fraud detection that explains every risk score.</p>
             <div className="flex flex-wrap gap-3 md:col-span-5 md:justify-end"><Button asChild><a href="#projects">View systems <ArrowDown /></a></Button><Button asChild variant="journal"><a href={resumeAsset.url} target="_blank" rel="noreferrer"><Download /> Résumé PDF</a></Button></div>
           </div>
         </div>
@@ -164,7 +164,7 @@ function Portfolio() {
         <SectionHeading index="01" label="Profile" title="Built for production" />
         <div className="grid lg:grid-cols-12">
           <div className="border-b border-border p-8 md:p-14 lg:col-span-8 lg:border-r">
-            <p className="max-w-3xl text-2xl font-semibold leading-tight md:text-4xl">I connect machine learning research with the systems discipline required to make it useful, observable, and resilient.</p>
+            <p className="max-w-3xl text-2xl font-semibold leading-tight md:text-4xl">I don't just train models—I ship systems. My work sits between research and production: MLOps pipelines that heal themselves, agentic retrieval that reasons across sources, and real-time risk engines that explain every decision.</p>
             <div className="mt-20 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
               {[['06','BUILT SYSTEMS'],['04','CORE DOMAINS'],['32K+','ROWS ANALYZED'],['2027','B.TECH GRAD']].map(([value,label]) => <div key={label} className="bg-background p-6"><p className="font-display text-3xl text-accent md:text-4xl">{value}</p><p className="mt-2 font-mono text-[8px] uppercase text-muted-foreground">{label}</p></div>)}
             </div>
