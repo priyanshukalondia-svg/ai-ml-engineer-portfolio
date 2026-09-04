@@ -181,8 +181,8 @@ function Portfolio() {
             <div className="mt-6 flex items-center gap-5"><div className="h-px flex-1 bg-border" /><p className="max-w-xl text-right font-mono text-sm uppercase leading-relaxed md:text-lg">Engineering <span className="text-accent">intelligent systems</span> that learn, reason, and ship.</p></div>
           </div>
           <div className="system-reveal grid gap-6 [animation-delay:240ms] md:grid-cols-12 md:items-stretch">
-            <p className="box-frame max-w-xl p-6 text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">I ship end-to-end AI systems: MLOps platforms that monitor, retrain, and rollback themselves; agentic RAG that reasons across documents; and real-time fraud detection that explains every risk score.</p>
-            <div className="box-frame flex flex-wrap items-center gap-3 p-6 md:col-span-5 md:justify-end"><Button asChild><a href="#projects">View systems <ArrowDown /></a></Button><Button asChild variant="journal"><a href={resumeAsset.url} target="_blank" rel="noreferrer"><Download /> Résumé PDF</a></Button></div>
+            <p className="max-w-xl p-6 text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">I ship end-to-end AI systems: MLOps platforms that monitor, retrain, and rollback themselves; agentic RAG that reasons across documents; and real-time fraud detection that explains every risk score.</p>
+            <div className="flex flex-wrap items-center gap-3 p-6 md:col-span-5 md:justify-end"><Button asChild><a href="#projects">View systems <ArrowDown /></a></Button><Button asChild variant="journal"><a href={resumeAsset.url} target="_blank" rel="noreferrer"><Download /> Résumé PDF</a></Button></div>
           </div>
         </div>
       </section>
