@@ -284,12 +284,12 @@ function Portfolio() {
       </div>
 
       <footer id="contact" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-t border-border">
-        <div className="system-grid p-6 py-20 md:p-12 md:py-28">
+        <div className="box-frame system-grid m-4 p-6 py-20 md:m-6 md:p-12 md:py-28">
           <p className="font-mono text-[10px] uppercase text-accent">[04] / Open channel</p>
           <h2 className="mt-8 max-w-6xl font-display text-[13vw] uppercase leading-[0.8] md:text-8xl lg:text-[9rem]">Let's build what learns.</h2>
           <a href="mailto:priyanshukalondia@gmail.com" className="mt-12 inline-flex max-w-full items-center gap-3 break-all border-b border-foreground pb-2 font-mono text-xs transition-colors hover:border-accent hover:text-accent sm:text-base"><Mail className="size-5 shrink-0" />priyanshukalondia@gmail.com</a>
         </div>
-        <div className="grid gap-px border-t border-border bg-border sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset.url]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="flex items-center justify-between bg-background p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div>
+        <div className="stage-3d grid gap-3 p-4 sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset.url]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="box-frame box-3d flex items-center justify-between p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div>
         <div className="relative mt-2 overflow-hidden border-t border-border">
           <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
           <img src={contactVisual.url} alt="Abstract neural network connection visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover" />
