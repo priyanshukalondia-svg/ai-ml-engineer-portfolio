@@ -106,10 +106,12 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
 
 function SectionHeading({ index, label, title }: { index: string; label: string; title: string }) {
   return (
-    <div className="grid gap-6 border border-border bg-card/40 py-9 md:grid-cols-[180px_1fr] md:items-end md:py-12 md:px-8">
-      <div className="font-mono text-[10px] uppercase text-muted-foreground">[{index}] / {label}</div>
-      <h2 className="font-display text-4xl uppercase leading-[0.9] md:text-7xl lg:text-8xl">{title}</h2>
-    </div>
+    <Reveal>
+      <div className="grid gap-6 border border-border bg-card/40 py-9 md:grid-cols-[180px_1fr] md:items-end md:py-12 md:px-8">
+        <div className="font-mono text-[10px] uppercase text-muted-foreground">[{index}] / {label}</div>
+        <h2 className="font-display text-4xl uppercase leading-[0.9] md:text-7xl lg:text-8xl">{title}</h2>
+      </div>
+    </Reveal>
   );
 }
 
@@ -127,6 +129,7 @@ function SectionBreak({ index, label }: { index: string; label: string }) {
 
 function Project({ project, reverse = false }: { project: (typeof primaryProjects)[number]; reverse?: boolean }) {
   return (
+    <Reveal>
     <article className="box-3d grid border border-border bg-card/40 lg:grid-cols-12">
       <div className={`relative overflow-hidden border-border bg-card lg:col-span-7 ${reverse ? "lg:order-2 lg:border-l" : "lg:border-r"}`}>
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
@@ -145,11 +148,13 @@ function Project({ project, reverse = false }: { project: (typeof primaryProject
         </div>
       </div>
     </article>
+    </Reveal>
   );
 }
 
 function Experience({ experience }: { experience: (typeof experiences)[number] }) {
   return (
+    <Reveal>
     <article className="box-3d grid border border-border bg-card/40 lg:grid-cols-12">
       <div className="flex flex-col justify-between border-b border-border p-8 md:p-14 lg:col-span-3 lg:border-b-0 lg:border-r">
         <p className="font-mono text-[10px] uppercase text-accent">{experience.date}</p>
