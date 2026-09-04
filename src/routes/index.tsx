@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Download, Mail, MapPin } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Braces, BrainCircuit, Boxes, DatabaseZap, Download, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 
 import aiSystemHero from "@/assets/ai-system-hero.jpg.asset.json";
@@ -42,6 +42,39 @@ const additionalProjects = [
 ];
 
 const capabilities = ["MACHINE LEARNING", "GENERATIVE AI", "MLOPS", "AGENTIC SYSTEMS", "DATA ENGINEERING", "EXPLAINABLE AI"];
+
+const skillGroups = [
+  {
+    index: "01",
+    title: "Languages",
+    icon: Braces,
+    skills: ["Python", "SQL", "Java", "C++", "JavaScript", "TypeScript"],
+  },
+  {
+    index: "02",
+    title: "AI / ML",
+    icon: BrainCircuit,
+    skills: ["Scikit-learn", "XGBoost", "Pandas", "NumPy", "Feature Engineering", "Model Evaluation", "Hyperparameter Tuning", "SHAP", "Explainable AI"],
+  },
+  {
+    index: "03",
+    title: "Generative AI",
+    icon: Boxes,
+    skills: ["LLMs", "RAG", "Agentic AI", "Embeddings", "Vector Search", "BM25", "Hybrid Retrieval", "RRF", "Reranking", "Query Decomposition", "Multi-Hop Retrieval", "LLM Evaluation"],
+  },
+  {
+    index: "04",
+    title: "MLOps",
+    icon: DatabaseZap,
+    skills: ["MLflow", "Experiment Tracking", "Model Registry", "Model Monitoring", "Data Drift Detection", "PSI", "KS Test", "Automated Retraining", "Champion-Challenger Evaluation", "Model Rollback"],
+  },
+  {
+    index: "05",
+    title: "Engineering",
+    icon: Braces,
+    skills: ["FastAPI", "REST APIs", "WebSockets", "React", "Tailwind CSS", "SQLAlchemy", "PostgreSQL", "MySQL", "Docker", "Git", "GitHub"],
+  },
+];
 
 function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
   return <a href={href} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase text-foreground transition-colors hover:text-accent">{children}<ArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>;
@@ -118,15 +151,40 @@ function Portfolio() {
       <section id="about" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border">
         <SectionHeading index="01" label="Profile" title="Built for production" />
         <div className="grid lg:grid-cols-12">
-          <div className="border-b border-border p-6 md:p-10 lg:col-span-7 lg:border-b-0 lg:border-r">
+          <div className="border-b border-border p-6 md:p-10 lg:col-span-8 lg:border-r">
             <p className="max-w-3xl text-2xl font-semibold leading-tight md:text-4xl">I connect machine learning research with the systems discipline required to make it useful, observable, and resilient.</p>
             <div className="mt-14 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
               {[['06','BUILT SYSTEMS'],['04','CORE DOMAINS'],['32K+','ROWS ANALYZED'],['2027','B.TECH GRAD']].map(([value,label]) => <div key={label} className="bg-background p-5"><p className="font-display text-3xl text-accent md:text-4xl">{value}</p><p className="mt-2 font-mono text-[8px] uppercase text-muted-foreground">{label}</p></div>)}
             </div>
           </div>
-          <div className="p-6 md:p-10 lg:col-span-5">
+          <div className="system-grid flex min-h-64 flex-col justify-between p-6 md:p-10 lg:col-span-4">
             <div className="flex items-center gap-3 font-mono text-[10px] uppercase text-muted-foreground"><MapPin className="size-4 text-accent" /> Delhi, India</div>
-            <div className="mt-10 space-y-8">{[["AI / ML CORE","Scikit-learn · XGBoost · feature engineering · SHAP · explainability"],["GENERATIVE AI","LLMs · RAG · agentic AI · embeddings · hybrid retrieval · reranking"],["MLOPS","MLflow · model registry · drift detection · automated retraining · rollback"],["ENGINEERING","Python · FastAPI · React · PostgreSQL · Docker · WebSockets"]].map(([title,text]) => <div key={title} className="grid grid-cols-[120px_1fr] gap-4 border-t border-border pt-4"><h3 className="font-mono text-[9px] text-accent">{title}</h3><p className="text-sm leading-relaxed text-muted-foreground">{text}</p></div>)}</div>
+            <div><p className="font-display text-6xl text-accent md:text-7xl">48</p><p className="mt-2 font-mono text-[9px] uppercase text-muted-foreground">Tools, methods & technologies in active stack</p></div>
+          </div>
+        </div>
+        <div className="border-t border-border">
+          <div className="flex flex-col justify-between gap-5 border-b border-border p-6 md:flex-row md:items-end md:p-10">
+            <div><p className="font-mono text-[9px] uppercase text-accent">Technical arsenal / full résumé index</p><h3 className="mt-4 font-display text-4xl uppercase leading-none md:text-6xl">Skills matrix</h3></div>
+            <p className="max-w-sm font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">From model research and retrieval architecture to production APIs, observability, and deployment.</p>
+          </div>
+          <div className="grid md:grid-cols-2 xl:grid-cols-12">
+            {skillGroups.map((group, groupIndex) => {
+              const Icon = group.icon;
+              const span = groupIndex === 2 ? "xl:col-span-5" : groupIndex < 2 ? "xl:col-span-6" : groupIndex === 3 ? "xl:col-span-4" : "xl:col-span-3";
+              return (
+                <article key={group.title} className={`group relative overflow-hidden border-b border-border p-6 transition-colors duration-500 hover:bg-accent hover:text-accent-foreground md:p-8 md:odd:border-r xl:border-r ${span}`}>
+                  <div className="pointer-events-none absolute -bottom-8 -right-2 font-display text-[9rem] leading-none text-foreground/[0.035] transition-all duration-500 group-hover:-translate-y-3 group-hover:text-accent-foreground/10">{group.index}</div>
+                  <div className="relative z-10 flex items-start justify-between border-b border-current/20 pb-5">
+                    <div><span className="font-mono text-[9px] opacity-60">MODULE_{group.index}</span><h4 className="mt-2 font-display text-2xl uppercase md:text-3xl">{group.title}</h4></div>
+                    <Icon className="size-7 text-accent transition-colors group-hover:text-accent-foreground" strokeWidth={1.4} />
+                  </div>
+                  <ul className="relative z-10 mt-6 flex flex-wrap gap-2" aria-label={`${group.title} skills`}>
+                    {group.skills.map((skill) => <li key={skill} className="border border-current/20 px-2.5 py-1.5 font-mono text-[9px] uppercase transition-transform duration-300 group-hover:-translate-y-0.5">{skill}</li>)}
+                  </ul>
+                  <div className="relative z-10 mt-8 flex items-center justify-between font-mono text-[8px] uppercase opacity-60"><span>Capability set</span><span>{String(group.skills.length).padStart(2, "0")} entries</span></div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
