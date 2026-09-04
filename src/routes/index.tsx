@@ -335,3 +335,42 @@ function Portfolio() {
     </main>
   );
 }
+function ContactForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus("sending");
+    try {
+      await sendContactMessage({ data: { name, email, message } });
+      setStatus("sent");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const field = "w-full border border-border bg-background/60 px-4 py-3 font-mono text-xs text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none";
+
+  return (
+    <form onSubmit={onSubmit} className="box-frame m-4 p-6 md:m-6 md:p-10">
+      <p className="font-mono text-[10px] uppercase text-accent">// Transmit a message</p>
+      <h3 className="mt-4 font-display text-3xl uppercase leading-none md:text-4xl">Direct line</h3>
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <input required maxLength={100} value={name} onChange={(e) => setName(e.target.value)} placeholder="YOUR_NAME" aria-label="Your name" className={field} />
+        <input required type="email" maxLength={255} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="YOUR_EMAIL" aria-label="Your email" className={field} />
+      </div>
+      <textarea required maxLength={2000} rows={5} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="YOUR_MESSAGE" aria-label="Your message" className={`${field} mt-4 resize-y`} />
+      <div className="mt-6 flex flex-wrap items-center gap-4">
+        <Button type="submit" variant="journal" disabled={status === "sending"}>{status === "sending" ? "Transmitting…" : "Send message"}</Button>
+        {status === "sent" && <p className="font-mono text-[10px] uppercase text-accent">Message received — I'll get back to you soon.</p>}
+        {status === "error" && <p className="font-mono text-[10px] uppercase text-destructive">Transmission failed — please try again.</p>}
+      </div>
+    </form>
+  );
+}
