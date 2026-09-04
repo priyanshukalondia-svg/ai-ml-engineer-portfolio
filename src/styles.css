@@ -213,3 +213,17 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Scroll reveal — content slides in from the left */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal { opacity: 1; transform: none; transition: none; }
+}
