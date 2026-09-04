@@ -15,6 +15,7 @@ import resumeAsset from "@/assets/priyanshu-kalondia-resume.pdf.asset.json";
 import sentinelImage from "@/assets/sentinelml.png.asset.json";
 import sentryImage from "@/assets/sentry.png.asset.json";
 import { Button } from "@/components/ui/button";
+import { sendContactMessage } from "@/lib/contact.functions";
 
 export const Route = createFileRoute("/")({
   head: () => ({
