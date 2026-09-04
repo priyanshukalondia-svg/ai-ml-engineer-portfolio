@@ -164,7 +164,7 @@ function Portfolio() {
       <header className="relative z-30 border-b border-border bg-background/95 px-5 py-5 backdrop-blur md:px-10">
         <nav aria-label="Primary navigation" className="mx-auto flex max-w-[1500px] items-center justify-between gap-6">
           <a href="#top" className="font-display text-lg uppercase">AI<span className="text-accent">/</span>ML</a>
-          <div className="hidden items-center gap-7 font-mono text-[9px] uppercase text-muted-foreground md:flex"><a href="#about" className="hover:text-accent">About</a><a href="#projects" className="hover:text-accent">Work</a><a href="#record" className="hover:text-accent">Record</a></div>
+          <div className="hidden items-center gap-7 font-mono text-[11px] uppercase text-muted-foreground md:flex"><a href="#about" className="hover:text-accent">About</a><a href="#projects" className="hover:text-accent">Work</a><a href="#record" className="hover:text-accent">Record</a></div>
           <Button asChild variant="journal"><a href="#contact">Initialize contact <ArrowUpRight /></a></Button>
         </nav>
       </header>
