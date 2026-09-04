@@ -1,24 +1,290 @@
-# AI ML Engineer Portfolio
+# AI/ML Engineer Portfolio
 
-SO I WANT TO MAKE THE PORTFOLIO FOR AI AND ML , THIS IS MY CURRENT PORTFOLIO FOR THE DATA ANALYST POST. I WANT YOU TO CHANGE THE CONTEXT AND CONTENT INCLUDING IMAGES OF THE PROJEC ACCORIDNG THE AI AND ML ENGINEER POST. I AM PROVIDING YOU MY CURRENT DATA ANALYST PORTFOLIO , MY AI AND ML RESUME , AND THE IMAGES OF THE PROJECT I HAVE USED IN THE RESUME , BUT I WANT YOU TO TO ADD ALL THE PROJECTS (3 FROM THE CURRENT AI AND ML RESUME AND 3 FROM THE CURRENT DATA ANALYST PORTFOLIO) , BUT KEEP THE AI AND ML PORTFOLIOS ABOVE IN THE ORDER AND THE NEXT THREE IN THE "SHOW MORE" SECTION. BUT DO NOT CATEGORIES THEM , JUST PUT ALL THEM UNDER THE PROJECT SECTION. TAKE THE REFRENCE FROM THE PORTFOLIO , USE THE DESIGNS LIKE THAT. THE ELEMENTS , THE EFFECTS AND ALL. ALSO EMBEDD THE ALL THE LINK WHICH ARE PRESENT IN THE RESUME. KEEP THE THEME SAME AS THE CURRENT PORTFOLIO BUT MAKE THE ELEMENTS AND OVERALL LOOK AS THE AI AND ML ENGINEER. https://priyanshukalondia.lovable.app/
+> Personal portfolio showcasing my work in **Artificial Intelligence, Machine Learning, Generative AI, and AI Engineering**.
 
-This project was built with [Lovable](https://lovable.dev).
+🌐 **Live Portfolio:** [View Website](https://ai-ml-engineer-portfolio.vercel.app/)
 
-## Build with Lovable
+💻 **GitHub:** [@priyanshukalondia-svg](https://github.com/priyanshukalondia-svg)
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/07c3435a-d837-4998-938e-c451a6730dd3).
+---
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## About
 
-## Development
+This repository contains the source code for my personal **AI/ML Engineer portfolio**.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+The portfolio is built to showcase more than just projects. It represents how I approach building practical AI systems — from machine learning models and data pipelines to **RAG systems, MLOps, backend APIs, deployment, and production-ready applications**.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+The goal is simple:
+
+**Build → Deploy → Improve → Repeat.**
+
+---
+
+## What You'll Find
+
+### 🤖 Artificial Intelligence
+
+* Generative AI applications
+* Large Language Model integrations
+* Retrieval-Augmented Generation (RAG)
+* Agentic AI workflows
+* AI-powered applications
+
+### 🧠 Machine Learning
+
+* Classification & prediction systems
+* Fraud detection
+* Model evaluation
+* Data preprocessing
+* Feature engineering
+* Model deployment
+
+### ⚙️ AI Engineering
+
+* Production ML pipelines
+* FastAPI backends
+* REST APIs
+* Model serving
+* Dockerized applications
+* Cloud deployment
+* Frontend + backend integration
+
+### 🔬 MLOps
+
+* Model monitoring
+* Data validation
+* Automated model workflows
+* Model lifecycle management
+* Production-oriented ML architecture
+
+---
+
+## Featured Projects
+
+### 🔎 Production Agentic RAG
+
+A production-oriented **Agentic RAG system** designed to retrieve relevant information and generate grounded responses using an intelligent retrieval pipeline.
+
+**Highlights**
+
+* Retrieval-Augmented Generation
+* Agentic workflow
+* FastAPI backend
+* React frontend
+* API-based architecture
+* Docker deployment
+
+🔗 **Live:** https://frontend-five-phi-44.vercel.app/
+
+🔗 **Repository:** https://github.com/priyanshukalondia-svg/production-agentic-rag
+
+---
+
+### 🛡️ SentinelML
+
+A **self-healing MLOps platform** built around a fraud-detection machine learning workflow.
+
+The project focuses on the production lifecycle of ML systems — from data and model validation to monitoring and automated recovery.
+
+**Highlights**
+
+* Machine Learning
+* MLOps
+* Model validation
+* Data validation
+* Automated model workflows
+* Production ML architecture
+
+🔗 **Live:** https://sentinelml.vercel.app/
+
+🔗 **Repository:** https://github.com/priyanshukalondia-svg/SentinelML
+
+---
+
+### 💳 Fraud Detection System
+
+A machine-learning application focused on detecting potentially fraudulent transactions.
+
+The project demonstrates the complete ML workflow from preparing data and training a model to exposing the model through an application.
+
+🔗 **Repository:** https://github.com/priyanshukalondia-svg/fraud-detection-scheme
+
+---
+
+## 🧰 Tech Stack
+
+### Programming
+
+* Python
+* JavaScript
+* SQL
+
+### Machine Learning
+
+* Scikit-learn
+* Pandas
+* NumPy
+* Matplotlib
+
+### AI / GenAI
+
+* LLM applications
+* RAG
+* Embeddings
+* Prompt Engineering
+* Agentic AI
+
+### Backend
+
+* FastAPI
+* REST APIs
+* Uvicorn
+
+### Frontend
+
+* React
+* Vite
+* JavaScript
+* HTML
+* CSS
+
+### DevOps & Deployment
+
+* Git
+* GitHub
+* Docker
+* Vercel
+* Render
+
+---
+
+## 🏗️ Engineering Approach
+
+I focus on building AI systems that go beyond notebooks and experiments.
+
+My projects generally follow this workflow:
+
+```text
+Problem
+   ↓
+Data
+   ↓
+Model / AI System
+   ↓
+Evaluation
+   ↓
+API / Application
+   ↓
+Deployment
+   ↓
+Monitoring & Improvement
+```
+
+The objective is to turn ML and AI concepts into **usable, deployable systems**.
+
+---
+
+## 📁 Repository Structure
+
+```text
+ai-ml-engineer-portfolio/
+│
+├── public/              # Static assets
+├── src/                 # Portfolio source code
+│   ├── components/      # UI components
+│   ├── assets/          # Images and visual assets
+│   └── ...
+│
+├── package.json         # Project dependencies
+├── vite.config.js       # Vite configuration
+└── README.md            # Project documentation
+```
+
+> The exact structure may evolve as new sections and projects are added.
+
+---
+
+## 🚀 Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/priyanshukalondia-svg/ai-ml-engineer-portfolio.git
+```
+
+Move into the project:
+
+```bash
+cd ai-ml-engineer-portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
+
+Open the local development URL shown by Vite.
+
+---
+
+## 🌐 Deployment
+
+The portfolio is designed to be deployed as a modern frontend application.
+
+Typical production workflow:
+
+```text
+GitHub
+   ↓
+Build
+   ↓
+Vercel
+   ↓
+Live Portfolio
+```
+
+---
+
+## 📈 Current Focus
+
+I'm continuously expanding the portfolio with projects around:
+
+* AI Engineering
+* Machine Learning
+* Generative AI
+* RAG
+* Agentic AI
+* MLOps
+* Model Deployment
+* Backend Engineering
+* Production AI Systems
+
+The portfolio is a **work in progress** — new systems and experiments will continue to be added.
+
+---
+
+## 🤝 Connect
+
+I'm interested in **AI/ML Engineering, Generative AI, MLOps, and building production-ready intelligent systems**.
+
+If you're working on something interesting in AI or ML, feel free to connect.
+
+* **GitHub:** https://github.com/priyanshukalondia-svg
+* **Portfolio:** https://ai-ml-engineer-portfolio.vercel.app/
+
+---
+
+## ⭐ Support
+
+If you find any of the projects useful or interesting, consider giving the repository a ⭐.
+
+---
+
+### Built with curiosity. Driven by AI. Focused on engineering.
