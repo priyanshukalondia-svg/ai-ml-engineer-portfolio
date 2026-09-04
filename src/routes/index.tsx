@@ -162,6 +162,11 @@ function Portfolio() {
         </div>
       </section>
 
+      <div className="relative mx-auto max-w-[1500px] overflow-hidden border-x border-border">
+        <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
+        <img src={dividerAIEngineering.url} alt="Abstract AI engineering visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
+      </div>
+
       <footer id="contact" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-t border-border">
         <div className="system-grid p-6 py-20 md:p-12 md:py-28">
           <p className="font-mono text-[10px] uppercase text-accent">[04] / Open channel</p>
