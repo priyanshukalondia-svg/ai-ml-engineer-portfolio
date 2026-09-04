@@ -2,18 +2,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Braces, BrainCircuit, Boxes, DatabaseZap, Download, Mail, MapPin } from "lucide-react";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 
-import aiSystemHero from "@/assets/ai-system-hero.jpg.asset.json";
-import contactVisual from "@/assets/contact-visual.jpg.asset.json";
-import customerSegmentation from "@/assets/customer-segmentation.jpg.asset.json";
-import dividerAIEngineering from "@/assets/divider-ai-engineering.jpg.asset.json";
-import dividerDataAI from "@/assets/divider-data-ai.jpg.asset.json";
-import dividerMLPipeline from "@/assets/divider-ml-pipeline.jpg.asset.json";
-import ecommerceIntelligence from "@/assets/ecommerce-intelligence.jpg.asset.json";
-import listeningAnalysis from "@/assets/listening-analysis.jpg.asset.json";
-import ragImage from "@/assets/agentic-rag.png.asset.json";
-import resumeAsset from "@/assets/priyanshu-kalondia-resume.pdf.asset.json";
-import sentinelImage from "@/assets/sentinelml.png.asset.json";
-import sentryImage from "@/assets/sentry.png.asset.json";
+import aiSystemHero from "@/assets/ai-system-hero.jpg";
+import contactVisual from "@/assets/contact-visual.jpg";
+import customerSegmentation from "@/assets/customer-segmentation.jpg";
+import dividerAIEngineering from "@/assets/divider-ai-engineering.jpg";
+import dividerDataAI from "@/assets/divider-data-ai.jpg";
+import dividerMLPipeline from "@/assets/divider-ml-pipeline.jpg";
+import ecommerceIntelligence from "@/assets/ecommerce-intelligence.jpg";
+import listeningAnalysis from "@/assets/listening-analysis.jpg";
+import ragImage from "@/assets/agentic-rag.png";
+import resumeAsset from "@/assets/priyanshu-kalondia-resume.pdf";
+import sentinelImage from "@/assets/sentinelml.png";
+import sentryImage from "@/assets/sentry.png";
 import { Button } from "@/components/ui/button";
 import { sendContactMessage } from "@/lib/contact.functions";
 
@@ -32,9 +32,9 @@ export const Route = createFileRoute("/")({
 });
 
 const primaryProjects = [
-  { number: "01", title: "SentinelML", subtitle: "Self-Healing MLOps Platform", image: sentinelImage.url, alt: "SentinelML self-healing MLOps platform interface", description: "An end-to-end ML lifecycle platform with experiment tracking, registry, deployment, PSI/KS drift detection, automated retraining, champion-challenger evaluation, rollback, and SHAP explainability.", stack: "Python / FastAPI / MLflow / XGBoost / React / PostgreSQL / Docker", live: "https://sentinelml.vercel.app/", github: "https://github.com/priyanshukalondia-svg/SentinelML" },
-  { number: "02", title: "Production Agentic RAG", subtitle: "Knowledge Assistant", image: ragImage.url, alt: "Agentic RAG knowledge assistant interface", description: "A grounded answer system using query decomposition, multi-hop retrieval, hybrid BM25/vector search, reciprocal rank fusion, reranking, citations, guardrails, and self-correction.", stack: "Python / FastAPI / LangGraph / RAG / BM25 / Vector Search / React", live: "https://fraudfrontend.vercel.app/", github: "https://github.com/priyanshukalondia-svg/fraud-detection-scheme" },
-  { number: "03", title: "Sentry", subtitle: "Fraud Detection & Risk Monitoring", image: sentryImage.url, alt: "Sentry AI fraud detection and risk monitoring dashboard", description: "A real-time fraud system combining supervised classification and anomaly detection with explainable risk scores, reason codes, alert triage, persistent transaction state, and live WebSocket updates.", stack: "Python / Scikit-learn / FastAPI / SQLAlchemy / React / WebSockets", live: "https://frontend-five-phi-44.vercel.app/", github: "https://github.com/priyanshukalondia-svg/production-agentic-rag" },
+  { number: "01", title: "SentinelML", subtitle: "Self-Healing MLOps Platform", image: sentinelImage, alt: "SentinelML self-healing MLOps platform interface", description: "An end-to-end ML lifecycle platform with experiment tracking, registry, deployment, PSI/KS drift detection, automated retraining, champion-challenger evaluation, rollback, and SHAP explainability.", stack: "Python / FastAPI / MLflow / XGBoost / React / PostgreSQL / Docker", live: "https://sentinelml.vercel.app/", github: "https://github.com/priyanshukalondia-svg/SentinelML" },
+  { number: "02", title: "Production Agentic RAG", subtitle: "Knowledge Assistant", image: ragImage, alt: "Agentic RAG knowledge assistant interface", description: "A grounded answer system using query decomposition, multi-hop retrieval, hybrid BM25/vector search, reciprocal rank fusion, reranking, citations, guardrails, and self-correction.", stack: "Python / FastAPI / LangGraph / RAG / BM25 / Vector Search / React", live: "https://fraudfrontend.vercel.app/", github: "https://github.com/priyanshukalondia-svg/fraud-detection-scheme" },
+  { number: "03", title: "Sentry", subtitle: "Fraud Detection & Risk Monitoring", image: sentryImage, alt: "Sentry AI fraud detection and risk monitoring dashboard", description: "A real-time fraud system combining supervised classification and anomaly detection with explainable risk scores, reason codes, alert triage, persistent transaction state, and live WebSocket updates.", stack: "Python / Scikit-learn / FastAPI / SQLAlchemy / React / WebSockets", live: "https://frontend-five-phi-44.vercel.app/", github: "https://github.com/priyanshukalondia-svg/production-agentic-rag" },
 ];
 
 const additionalProjects = [
@@ -195,7 +195,7 @@ function Portfolio() {
       </header>
 
       <section className="system-grid relative mx-auto min-h-[820px] max-w-[1500px] overflow-hidden border-x border-border px-5 pb-16 pt-32 md:px-10 md:pb-20 md:pt-36 lg:px-14">
-        <div className="absolute right-0 top-0 h-full w-[46%] opacity-45 [mask-image:linear-gradient(to_left,black,transparent)]"><img src={aiSystemHero.url} alt="Abstract artificial intelligence inference architecture" width={1920} height={1080} className="h-full w-full object-cover" /></div>
+        <div className="absolute right-0 top-0 h-full w-[46%] opacity-45 [mask-image:linear-gradient(to_left,black,transparent)]"><img src={aiSystemHero} alt="Abstract artificial intelligence inference architecture" width={1920} height={1080} className="h-full w-full object-cover" /></div>
         <div className="relative z-10 flex min-h-[730px] flex-col justify-between">
           <div className="box-frame system-reveal flex flex-wrap items-center justify-between gap-4 p-4 font-mono text-[9px] uppercase text-muted-foreground">
             <span className="flex items-center gap-3"><span className="size-2 bg-accent" />Node status: available for opportunities</span><span>Delhi / India / 28.6139° N</span>
@@ -207,7 +207,7 @@ function Portfolio() {
           </div>
           <div className="system-reveal grid gap-6 [animation-delay:240ms] md:grid-cols-12 md:items-stretch">
             <p className="max-w-xl p-6 text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">I build end-to-end AI, ML, and data analytics solutions — from intelligent models and agentic RAG systems to full-stack web apps that put them in users' hands. I turn raw data into production-ready systems: predictive models, real-time dashboards, automated pipelines, and generative AI tools shipped with Python, React, FastAPI, and cloud infrastructure.</p>
-            <div className="flex flex-wrap items-center gap-3 p-6 md:col-span-5 md:justify-end"><Button asChild><a href="#projects">View systems <ArrowDown /></a></Button><Button asChild variant="journal"><a href={resumeAsset.url} target="_blank" rel="noreferrer"><Download /> Résumé PDF</a></Button></div>
+            <div className="flex flex-wrap items-center gap-3 p-6 md:col-span-5 md:justify-end"><Button asChild><a href="#projects">View systems <ArrowDown /></a></Button><Button asChild variant="journal"><a href={resumeAsset} target="_blank" rel="noreferrer"><Download /> Résumé PDF</a></Button></div>
           </div>
         </div>
       </section>
@@ -267,13 +267,13 @@ function Portfolio() {
 
       <div className="relative mx-auto max-w-[1500px] overflow-hidden border border-border bg-card/40">
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
-        <img src={dividerDataAI.url} alt="Abstract data and AI visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
+        <img src={dividerDataAI} alt="Abstract data and AI visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
       </div>
 
       <section id="projects" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="02" label="Selected work" title="Deployed intelligence" />
         <div className="space-y-10 md:space-y-14">{primaryProjects.map((project, index) => <Project key={project.title} project={project} reverse={index % 2 === 1} />)}</div>
-        {showMore && <div id="additional-projects" className="system-reveal mt-14 grid gap-6 border-b border-border p-4 lg:grid-cols-3">{additionalProjects.map((project) => <Reveal key={project.title}><article className="box-frame box-3d group flex h-full flex-col"><div className="overflow-hidden"><img src={project.image.url} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-8 md:p-10"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article></Reveal>)}</div>}
+        {showMore && <div id="additional-projects" className="system-reveal mt-14 grid gap-6 border-b border-border p-4 lg:grid-cols-3">{additionalProjects.map((project) => <Reveal key={project.title}><article className="box-frame box-3d group flex h-full flex-col"><div className="overflow-hidden"><img src={project.image} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-8 md:p-10"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article></Reveal>)}</div>}
         <div className="flex justify-center border-b border-border py-16 md:py-20"><Button variant="journal" onClick={() => setShowMore((value) => !value)} aria-expanded={showMore} aria-controls="additional-projects">{showMore ? "Collapse archive" : "Show 03 more projects"}<ArrowDown className={showMore ? "rotate-180" : ""} /></Button></div>
       </section>
 
@@ -281,7 +281,7 @@ function Portfolio() {
 
       <div className="relative mx-auto max-w-[1500px] overflow-hidden border border-border bg-card/40">
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
-        <img src={dividerMLPipeline.url} alt="Abstract machine learning pipeline visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
+        <img src={dividerMLPipeline} alt="Abstract machine learning pipeline visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
       </div>
 
       <section id="record" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
@@ -313,7 +313,7 @@ function Portfolio() {
 
       <div className="relative mx-auto max-w-[1500px] overflow-hidden border border-border bg-card/40">
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
-        <img src={dividerAIEngineering.url} alt="Abstract AI engineering visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
+        <img src={dividerAIEngineering} alt="Abstract AI engineering visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover grayscale" />
       </div>
 
       <footer id="contact" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-t border-border">
@@ -324,11 +324,11 @@ function Portfolio() {
           <a href="mailto:priyanshukalondia@gmail.com" className="mt-12 inline-flex max-w-full items-center gap-3 break-all border-b border-foreground pb-2 font-mono text-xs transition-colors hover:border-accent hover:text-accent sm:text-base"><Mail className="size-5 shrink-0" />priyanshukalondia@gmail.com</a>
         </div>
         </Reveal>
-        <Reveal><div className="stage-3d grid gap-3 p-4 sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset.url]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="box-frame box-3d flex items-center justify-between p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div></Reveal>
+        <Reveal><div className="stage-3d grid gap-3 p-4 sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="box-frame box-3d flex items-center justify-between p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div></Reveal>
         <Reveal><ContactForm /></Reveal>
         <div className="relative mt-2 overflow-hidden border-t border-border">
           <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
-          <img src={contactVisual.url} alt="Abstract neural network connection visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover" />
+          <img src={contactVisual} alt="Abstract neural network connection visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover" />
         </div>
         <div className="flex flex-col justify-between gap-2 border-t border-border px-6 py-5 font-mono text-[8px] uppercase text-muted-foreground sm:flex-row"><span>© 2026 Priyanshu Kalondia</span><span>AI / ML Engineer · Delhi, India</span></div>
       </footer>
