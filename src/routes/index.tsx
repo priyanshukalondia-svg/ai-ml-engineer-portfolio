@@ -232,10 +232,12 @@ function Portfolio() {
           </div>
         </Reveal>
         <div className="mt-16">
+          <Reveal>
           <div className="box-frame flex flex-col justify-between gap-5 p-8 md:flex-row md:items-end md:p-14">
             <div><p className="font-mono text-[9px] uppercase text-accent">Technical arsenal / full résumé index</p><h3 className="mt-4 font-display text-4xl uppercase leading-none md:text-6xl">Skills matrix</h3></div>
             <p className="max-w-sm font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">From model research and retrieval architecture to production APIs, observability, and deployment.</p>
           </div>
+          </Reveal>
           <div className="stage-3d grid gap-5 pt-6 md:grid-cols-2 xl:grid-cols-12">
             {skillGroups.map((group, groupIndex) => {
               const Icon = group.icon;
@@ -253,6 +255,7 @@ function Portfolio() {
                   </ul>
                   <div className="relative z-10 mt-10 flex items-center justify-between font-mono text-[8px] uppercase opacity-60"><span>Capability set</span><span>{String(group.skills.length).padStart(2, "0")} entries</span></div>
                 </article>
+                </Reveal>
               );
             })}
           </div>
