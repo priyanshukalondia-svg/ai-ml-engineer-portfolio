@@ -244,15 +244,22 @@ function Portfolio() {
 
       <section id="record" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="03" label="Experience" title="The operating record" />
-        <div className="grid lg:grid-cols-12">
-          <div className="border-b border-border p-8 md:p-14 lg:col-span-7 lg:border-b-0 lg:border-r">
-            <p className="font-mono text-[10px] uppercase text-accent">Experience log</p>
-            <div className="mt-14">{[["2026.06—07","Data Analyst Intern","V Devi Foundation","Built a centralized donor data system, automated CSV/Excel validation, and developed Power BI and Streamlit dashboards."],["2026.01—03","Lead & Co-Founder","Insanzia Labs","Designed database schemas and frontend data flows, integrated REST APIs, and monitored product usage."]].map(([date,role,org,text]) => <article key={role} className="grid gap-5 border-t border-border py-10 sm:grid-cols-[130px_1fr]"><span className="font-mono text-[9px] text-muted-foreground">{date}</span><div><h3 className="text-xl font-bold uppercase">{role}</h3><p className="mt-1 font-mono text-[9px] uppercase text-accent">{org}</p><p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">{text}</p></div></article>)}</div>
-          </div>
-          <div className="grid lg:col-span-5">
-            <div className="border-b border-border p-8 md:p-14"><p className="font-mono text-[10px] uppercase text-accent">Education</p><h3 className="mt-10 font-display text-3xl uppercase">B.Tech Information Technology</h3><p className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">GGSIPU (USICT) / 2023—2027</p><p className="mt-6 text-sm text-muted-foreground">Specialization in Artificial Intelligence and Machine Learning.</p></div>
-            <div className="p-8 md:p-14"><p className="font-mono text-[10px] uppercase text-accent">Recognition</p><ul className="mt-10 space-y-8 text-sm leading-relaxed text-muted-foreground"><li className="border-l-2 border-accent pl-5"><strong className="block text-foreground">Top 20% nationwide</strong>Top 5,000 of 25,000 teams at BuildWithIndia–HackWithIndia.</li><li className="border-l-2 border-accent pl-5"><strong className="block text-foreground">GDG Solution Challenge</strong>Built an AI solution aligned with UN Sustainable Development Goals.</li></ul></div>
-          </div>
+        <div className="space-y-10 md:space-y-14">{experiences.map((experience) => <Experience key={experience.role} experience={experience} />)}</div>
+        <div className="mt-14 grid gap-6 border-b border-border lg:grid-cols-2">
+          <article className="group flex flex-col border border-border p-8 md:p-10">
+            <span className="font-mono text-[9px] text-accent">EDU_01</span>
+            <h3 className="mt-5 font-display text-3xl uppercase leading-none">B.Tech Information Technology</h3>
+            <p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">GGSIPU (USICT) / 2023—2027</p>
+            <p className="flex-1 text-sm leading-relaxed text-muted-foreground">Specialization in Artificial Intelligence and Machine Learning.</p>
+          </article>
+          <article className="group flex flex-col border border-border p-8 md:p-10">
+            <span className="font-mono text-[9px] text-accent">REC_01</span>
+            <h3 className="mt-5 font-display text-3xl uppercase leading-none">Recognition</h3>
+            <ul className="mt-5 flex-1 space-y-4 text-sm leading-relaxed text-muted-foreground">
+              <li className="border-l-2 border-accent pl-4"><strong className="block text-foreground">Top 20% nationwide</strong>Top 5,000 of 25,000 teams at BuildWithIndia–HackWithIndia.</li>
+              <li className="border-l-2 border-accent pl-4"><strong className="block text-foreground">GDG Solution Challenge</strong>Built an AI solution aligned with UN Sustainable Development Goals.</li>
+            </ul>
+          </article>
         </div>
       </section>
 
