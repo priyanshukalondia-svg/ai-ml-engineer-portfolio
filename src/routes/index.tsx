@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Braces, BrainCircuit, Boxes, DatabaseZap, Download, Mail, MapPin } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 
 import aiSystemHero from "@/assets/ai-system-hero.jpg.asset.json";
 import contactVisual from "@/assets/contact-visual.jpg.asset.json";
