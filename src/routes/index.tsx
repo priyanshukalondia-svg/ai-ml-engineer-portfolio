@@ -108,16 +108,16 @@ function Project({ project, reverse = false }: { project: (typeof primaryProject
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
         <img src={project.image} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] h-full w-full object-cover grayscale transition duration-700 hover:grayscale-0" />
       </div>
-      <div className={`flex flex-col justify-between p-6 md:p-10 lg:col-span-5 ${reverse ? "lg:order-1" : ""}`}>
+      <div className={`flex flex-col justify-between p-8 md:p-14 lg:col-span-5 ${reverse ? "lg:order-1" : ""}`}>
         <div>
           <div className="flex items-center justify-between font-mono text-[10px] text-muted-foreground"><span>PROJECT_{project.number}</span><span className="text-accent">SYSTEM ACTIVE</span></div>
-          <h3 className="mt-10 font-display text-4xl uppercase leading-[0.92] md:text-6xl">{project.title}</h3>
-          <p className="mt-3 font-mono text-[10px] uppercase text-accent">{project.subtitle}</p>
-          <p className="mt-7 max-w-[48ch] text-base leading-relaxed text-muted-foreground">{project.description}</p>
+          <h3 className="mt-12 font-display text-4xl uppercase leading-[0.92] md:text-6xl">{project.title}</h3>
+          <p className="mt-4 font-mono text-[10px] uppercase text-accent">{project.subtitle}</p>
+          <p className="mt-8 max-w-[48ch] text-base leading-relaxed text-muted-foreground">{project.description}</p>
         </div>
-        <div className="mt-12 border-t border-border pt-5">
-          <p className="mb-5 font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">{project.stack}</p>
-          <div className="flex gap-7"><ExternalLink href={project.live}>Live system</ExternalLink><ExternalLink href={project.github}>Source code</ExternalLink></div>
+        <div className="mt-14 border-t border-border pt-6">
+          <p className="mb-6 font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">{project.stack}</p>
+          <div className="flex gap-8"><ExternalLink href={project.live}>Live system</ExternalLink><ExternalLink href={project.github}>Source code</ExternalLink></div>
         </div>
       </div>
     </article>
