@@ -325,6 +325,7 @@ function Portfolio() {
         </div>
         </Reveal>
         <Reveal><div className="stage-3d grid gap-3 p-4 sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset.url]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="box-frame box-3d flex items-center justify-between p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div></Reveal>
+        <Reveal><ContactForm /></Reveal>
         <div className="relative mt-2 overflow-hidden border-t border-border">
           <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
           <img src={contactVisual.url} alt="Abstract neural network connection visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover" />
