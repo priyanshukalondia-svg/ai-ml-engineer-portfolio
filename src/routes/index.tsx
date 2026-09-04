@@ -82,9 +82,21 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
 
 function SectionHeading({ index, label, title }: { index: string; label: string; title: string }) {
   return (
-    <div className="grid gap-5 border-y border-border py-7 md:grid-cols-[180px_1fr] md:items-end">
+    <div className="grid gap-6 border-y border-border py-9 md:grid-cols-[180px_1fr] md:items-end md:py-12">
       <div className="font-mono text-[10px] uppercase text-muted-foreground">[{index}] / {label}</div>
       <h2 className="font-display text-4xl uppercase leading-[0.9] md:text-7xl lg:text-8xl">{title}</h2>
+    </div>
+  );
+}
+
+function SectionBreak({ index, label }: { index: string; label: string }) {
+  return (
+    <div className="mx-auto max-w-[1500px] border-x border-b border-border px-5 py-8 md:px-10 md:py-12">
+      <div className="flex items-center gap-4">
+        <span className="size-2.5 bg-accent" aria-hidden="true" />
+        <span className="font-mono text-[9px] uppercase text-muted-foreground">End of section [{index}] / {label}</span>
+        <div className="h-px flex-1 bg-border" />
+      </div>
     </div>
   );
 }
