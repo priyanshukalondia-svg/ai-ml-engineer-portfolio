@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Braces, BrainCircuit, Boxes, DatabaseZap, Download, Mail, MapPin } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import aiSystemHero from "@/assets/ai-system-hero.jpg.asset.json";
 import contactVisual from "@/assets/contact-visual.jpg.asset.json";
@@ -86,12 +86,32 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
   return <a href={href} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase text-foreground transition-colors hover:text-accent">{children}<ArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>;
 }
 
+function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0]?.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.12 });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+  return <div ref={ref} className={`scroll-reveal ${visible ? "is-visible" : ""} ${className}`}>{children}</div>;
+}
+
 function SectionHeading({ index, label, title }: { index: string; label: string; title: string }) {
   return (
-    <div className="grid gap-6 border border-border bg-card/40 py-9 md:grid-cols-[180px_1fr] md:items-end md:py-12 md:px-8">
-      <div className="font-mono text-[10px] uppercase text-muted-foreground">[{index}] / {label}</div>
-      <h2 className="font-display text-4xl uppercase leading-[0.9] md:text-7xl lg:text-8xl">{title}</h2>
-    </div>
+    <Reveal>
+      <div className="grid gap-6 border border-border bg-card/40 py-9 md:grid-cols-[180px_1fr] md:items-end md:py-12 md:px-8">
+        <div className="font-mono text-[10px] uppercase text-muted-foreground">[{index}] / {label}</div>
+        <h2 className="font-display text-4xl uppercase leading-[0.9] md:text-7xl lg:text-8xl">{title}</h2>
+      </div>
+    </Reveal>
   );
 }
 
@@ -109,6 +129,7 @@ function SectionBreak({ index, label }: { index: string; label: string }) {
 
 function Project({ project, reverse = false }: { project: (typeof primaryProjects)[number]; reverse?: boolean }) {
   return (
+    <Reveal>
     <article className="box-3d grid border border-border bg-card/40 lg:grid-cols-12">
       <div className={`relative overflow-hidden border-border bg-card lg:col-span-7 ${reverse ? "lg:order-2 lg:border-l" : "lg:border-r"}`}>
         <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
@@ -127,11 +148,13 @@ function Project({ project, reverse = false }: { project: (typeof primaryProject
         </div>
       </div>
     </article>
+    </Reveal>
   );
 }
 
 function Experience({ experience }: { experience: (typeof experiences)[number] }) {
   return (
+    <Reveal>
     <article className="box-3d grid border border-border bg-card/40 lg:grid-cols-12">
       <div className="flex flex-col justify-between border-b border-border p-8 md:p-14 lg:col-span-3 lg:border-b-0 lg:border-r">
         <p className="font-mono text-[10px] uppercase text-accent">{experience.date}</p>
@@ -154,6 +177,7 @@ function Experience({ experience }: { experience: (typeof experiences)[number] }
         )}
       </div>
     </article>
+    </Reveal>
   );
 }
 
@@ -195,7 +219,7 @@ function Portfolio() {
 
       <section id="about" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="01" label="Profile" title="Built for production" />
-        <div className="grid lg:grid-cols-12">
+        <Reveal className="grid lg:grid-cols-12">
           <div className="box-frame p-8 md:p-14 lg:col-span-8">
             <p className="max-w-3xl font-mono text-lg font-normal leading-relaxed md:text-xl">I don't just train models—I ship systems. My work sits between research and production: MLOps pipelines that heal themselves, agentic retrieval that reasons across sources, and real-time risk engines that explain every decision.</p>
             <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -206,18 +230,21 @@ function Portfolio() {
             <div className="flex items-center gap-3 font-mono text-[10px] uppercase text-muted-foreground"><MapPin className="size-4 text-accent" /> Delhi, India</div>
             <div><p className="font-display text-6xl text-accent md:text-7xl">48</p><p className="mt-2 font-mono text-[9px] uppercase text-muted-foreground">Tools, methods & technologies in active stack</p></div>
           </div>
-        </div>
+        </Reveal>
         <div className="mt-16">
+          <Reveal>
           <div className="box-frame flex flex-col justify-between gap-5 p-8 md:flex-row md:items-end md:p-14">
             <div><p className="font-mono text-[9px] uppercase text-accent">Technical arsenal / full résumé index</p><h3 className="mt-4 font-display text-4xl uppercase leading-none md:text-6xl">Skills matrix</h3></div>
             <p className="max-w-sm font-mono text-[9px] uppercase leading-relaxed text-muted-foreground">From model research and retrieval architecture to production APIs, observability, and deployment.</p>
           </div>
+          </Reveal>
           <div className="stage-3d grid gap-5 pt-6 md:grid-cols-2 xl:grid-cols-12">
             {skillGroups.map((group, groupIndex) => {
               const Icon = group.icon;
               const span = groupIndex < 2 ? "xl:col-span-6" : "xl:col-span-4";
               return (
-                <article key={group.title} className={`box-frame box-3d group relative overflow-hidden p-8 md:p-10 ${span}`}>
+                <Reveal key={group.title} className={span}>
+                <article className="box-frame box-3d group relative h-full overflow-hidden p-8 md:p-10">
                   <div className="pointer-events-none absolute -bottom-8 -right-2 font-display text-[9rem] leading-none text-foreground/[0.035] transition-all duration-500 group-hover:-translate-y-3">{group.index}</div>
                   <div className="relative z-10 flex items-start justify-between border-b border-current/20 pb-6">
                     <div><span className="font-mono text-[9px] opacity-60">MODULE_{group.index}</span><h4 className="mt-2 font-display text-2xl uppercase md:text-3xl">{group.title}</h4></div>
@@ -228,6 +255,7 @@ function Portfolio() {
                   </ul>
                   <div className="relative z-10 mt-10 flex items-center justify-between font-mono text-[8px] uppercase opacity-60"><span>Capability set</span><span>{String(group.skills.length).padStart(2, "0")} entries</span></div>
                 </article>
+                </Reveal>
               );
             })}
           </div>
@@ -244,7 +272,7 @@ function Portfolio() {
       <section id="projects" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-border py-16 md:py-24">
         <SectionHeading index="02" label="Selected work" title="Deployed intelligence" />
         <div className="space-y-10 md:space-y-14">{primaryProjects.map((project, index) => <Project key={project.title} project={project} reverse={index % 2 === 1} />)}</div>
-        {showMore && <div id="additional-projects" className="system-reveal mt-14 grid gap-6 border-b border-border p-4 lg:grid-cols-3">{additionalProjects.map((project) => <article key={project.title} className="box-frame box-3d group flex flex-col"><div className="overflow-hidden"><img src={project.image.url} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-8 md:p-10"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article>)}</div>}
+        {showMore && <div id="additional-projects" className="system-reveal mt-14 grid gap-6 border-b border-border p-4 lg:grid-cols-3">{additionalProjects.map((project) => <Reveal key={project.title}><article className="box-frame box-3d group flex h-full flex-col"><div className="overflow-hidden"><img src={project.image.url} alt={project.alt} width={1600} height={1000} loading="lazy" className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0" /></div><div className="flex flex-1 flex-col p-8 md:p-10"><span className="font-mono text-[9px] text-accent">PROJECT_{project.number}</span><h3 className="mt-5 font-display text-3xl uppercase leading-none">{project.title}</h3><p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p><p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">{project.stack}</p><ExternalLink href={project.github}>Source code</ExternalLink></div></article></Reveal>)}</div>}
         <div className="flex justify-center border-b border-border py-16 md:py-20"><Button variant="journal" onClick={() => setShowMore((value) => !value)} aria-expanded={showMore} aria-controls="additional-projects">{showMore ? "Collapse archive" : "Show 03 more projects"}<ArrowDown className={showMore ? "rotate-180" : ""} /></Button></div>
       </section>
 
@@ -259,13 +287,16 @@ function Portfolio() {
         <SectionHeading index="03" label="Experience" title="The operating record" />
         <div className="space-y-10 md:space-y-14">{experiences.map((experience) => <Experience key={experience.role} experience={experience} />)}</div>
         <div className="stage-3d mt-14 grid gap-6 lg:grid-cols-2">
-          <article className="box-frame box-3d group flex flex-col p-8 md:p-10">
+          <Reveal>
+          <article className="box-frame box-3d group flex h-full flex-col p-8 md:p-10">
             <span className="font-mono text-[9px] text-accent">EDU_01</span>
             <h3 className="mt-5 font-display text-3xl uppercase leading-none">B.Tech Information Technology</h3>
             <p className="my-6 border-t border-border pt-4 font-mono text-[9px] uppercase text-muted-foreground">GGSIPU (USICT) / 2023—2027</p>
             <p className="flex-1 text-sm leading-relaxed text-muted-foreground">Specialization in Artificial Intelligence and Machine Learning.</p>
           </article>
-          <article className="box-frame box-3d group flex flex-col p-8 md:p-10">
+          </Reveal>
+          <Reveal>
+          <article className="box-frame box-3d group flex h-full flex-col p-8 md:p-10">
             <span className="font-mono text-[9px] text-accent">REC_01</span>
             <h3 className="mt-5 font-display text-3xl uppercase leading-none">Recognition</h3>
             <ul className="mt-5 flex-1 space-y-4 text-sm leading-relaxed text-muted-foreground">
@@ -273,6 +304,7 @@ function Portfolio() {
               <li className="border-l-2 border-accent pl-4"><strong className="block text-foreground">GDG Solution Challenge</strong>Built an AI solution aligned with UN Sustainable Development Goals.</li>
             </ul>
           </article>
+          </Reveal>
         </div>
       </section>
 
@@ -284,12 +316,14 @@ function Portfolio() {
       </div>
 
       <footer id="contact" className="mx-auto max-w-[1500px] scroll-mt-4 border-x border-t border-border">
+        <Reveal>
         <div className="box-frame system-grid m-4 p-6 py-20 md:m-6 md:p-12 md:py-28">
           <p className="font-mono text-[10px] uppercase text-accent">[04] / Open channel</p>
           <h2 className="mt-8 max-w-6xl font-display text-[13vw] uppercase leading-[0.8] md:text-8xl lg:text-[9rem]">Let's build what learns.</h2>
           <a href="mailto:priyanshukalondia@gmail.com" className="mt-12 inline-flex max-w-full items-center gap-3 break-all border-b border-foreground pb-2 font-mono text-xs transition-colors hover:border-accent hover:text-accent sm:text-base"><Mail className="size-5 shrink-0" />priyanshukalondia@gmail.com</a>
         </div>
-        <div className="stage-3d grid gap-3 p-4 sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset.url]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="box-frame box-3d flex items-center justify-between p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div>
+        </Reveal>
+        <Reveal><div className="stage-3d grid gap-3 p-4 sm:grid-cols-5">{[["LINKEDIN","https://www.linkedin.com/in/priyanshu-kalondia-653517390/"],["GITHUB","https://github.com/priyanshukalondia-svg"],["TWITTER","https://x.com/Priyanshu__1703"],["WHATSAPP","https://wa.me/919971747013"],["RÉSUMÉ",resumeAsset.url]].map(([label,href]) => <a key={label} href={href} target="_blank" rel="noreferrer" className="box-frame box-3d flex items-center justify-between p-5 font-mono text-[9px] hover:bg-accent hover:text-accent-foreground">{label}<ArrowUpRight className="size-3.5" /></a>)}</div></Reveal>
         <div className="relative mt-2 overflow-hidden border-t border-border">
           <div className="scan-line pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-accent" />
           <img src={contactVisual.url} alt="Abstract neural network connection visualization" width={1920} height={600} loading="lazy" className="aspect-[16/5] w-full object-cover" />
