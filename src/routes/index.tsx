@@ -129,6 +129,21 @@ function Project({ project, reverse = false }: { project: (typeof primaryProject
   );
 }
 
+function Experience({ experience }: { experience: (typeof experiences)[number] }) {
+  return (
+    <article className="grid border-b border-border lg:grid-cols-12">
+      <div className="flex flex-col justify-between border-b border-border p-8 md:p-14 lg:col-span-3 lg:border-b-0 lg:border-r">
+        <p className="font-mono text-[10px] uppercase text-accent">{experience.date}</p>
+        <p className="mt-8 font-mono text-[9px] uppercase text-muted-foreground lg:mt-0">{experience.org}</p>
+      </div>
+      <div className="p-8 md:p-14 lg:col-span-9">
+        <h3 className="font-display text-3xl uppercase leading-[0.92] md:text-5xl">{experience.role}</h3>
+        <p className="mt-6 max-w-[60ch] text-base leading-relaxed text-muted-foreground">{experience.description}</p>
+      </div>
+    </article>
+  );
+}
+
 function Portfolio() {
   const [showMore, setShowMore] = useState(false);
   return (
