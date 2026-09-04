@@ -139,6 +139,18 @@ function Experience({ experience }: { experience: (typeof experiences)[number] }
       <div className="p-8 md:p-14 lg:col-span-9">
         <h3 className="font-display text-3xl uppercase leading-[0.92] md:text-5xl">{experience.role}</h3>
         <p className="mt-6 max-w-[60ch] text-base leading-relaxed text-muted-foreground">{experience.description}</p>
+        {experience.testimonial && (
+          <div className="mt-8 border-l-2 border-accent bg-accent/5 p-6">
+            <p className="max-w-[60ch] font-mono text-sm leading-relaxed text-foreground">“{experience.testimonial.quote}”</p>
+            <div className="mt-4 flex items-center gap-3">
+              <div className="h-px w-8 bg-accent" />
+              <div>
+                <p className="font-mono text-[10px] uppercase text-foreground">{experience.testimonial.author}</p>
+                <p className="font-mono text-[9px] uppercase text-muted-foreground">{experience.testimonial.title}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </article>
   );
