@@ -184,7 +184,7 @@ function Portfolio() {
         <SectionHeading index="01" label="Profile" title="Built for production" />
         <div className="grid lg:grid-cols-12">
           <div className="border-b border-border p-8 md:p-14 lg:col-span-8 lg:border-r">
-            <p className="max-w-3xl font-display text-2xl leading-tight md:text-4xl">I don't just train models—I ship systems. My work sits between research and production: MLOps pipelines that heal themselves, agentic retrieval that reasons across sources, and real-time risk engines that explain every decision.</p>
+            <p className="max-w-3xl font-mono text-lg font-normal leading-relaxed md:text-xl">I don't just train models—I ship systems. My work sits between research and production: MLOps pipelines that heal themselves, agentic retrieval that reasons across sources, and real-time risk engines that explain every decision.</p>
             <div className="mt-20 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
               {[['06','BUILT SYSTEMS'],['04','CORE DOMAINS'],['32K+','ROWS ANALYZED'],['2027','B.TECH GRAD']].map(([value,label]) => <div key={label} className="bg-background p-6"><p className="font-display text-3xl text-accent md:text-4xl">{value}</p><p className="mt-2 font-mono text-[8px] uppercase text-muted-foreground">{label}</p></div>)}
             </div>
