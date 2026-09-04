@@ -184,6 +184,28 @@
   animation: scan 7s linear infinite;
 }
 
+/* Framed box with hard boundaries */
+@utility box-frame {
+  border: 1px solid var(--border);
+  background-color: color-mix(in oklab, var(--card) 60%, transparent);
+}
+
+/* 3D lift on hover — element rises off the page with deep shadow + accent edge light */
+@utility box-3d {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow:
+      0 30px 70px -24px oklch(0 0 0 / 0.95),
+      0 0 0 1px color-mix(in oklab, var(--accent) 45%, transparent);
+  }
+}
+
+/* Perspective stage for 3D children */
+@utility stage-3d {
+  perspective: 1200px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
