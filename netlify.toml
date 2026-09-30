@@ -1,26 +1,16 @@
 [build]
-  # Directory with the website source
-  base = "."
-  
-  # Build command for TanStack Start with Nitro
+  # Build command for TanStack Start with Nitro (netlify preset)
   command = "npm run build"
-  
-  # Directory that will be deployed (Nitro output for Netlify)
-  publish = ".output/public"
-  
-  # Functions directory for Netlify Functions
-  functions = ".output/server"
+
+  # Static assets emitted by Nitro's netlify preset. The SSR function is written
+  # to .netlify/functions-internal and routed automatically, so no functions
+  # directory or catch-all redirect is needed here.
+  publish = "dist"
 
 # Environment variables
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   NPM_FLAGS = "--legacy-peer-deps"
-
-# Redirect rules for SPA routing - Nitro handles this but backup for static assets
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server/:splat"
-  status = 200
 
 # Headers for security and performance
 [[headers]]
