@@ -12,12 +12,4 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  nitro: {
-    preset: "static",
-    serveStatic: true,
-    prerender: {
-      crawlLinks: true,
-      routes: ["/"],
-    },
-  },
 });
