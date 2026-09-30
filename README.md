@@ -236,16 +236,37 @@ Open the local development URL shown by Vite.
 
 ## 🌐 Deployment
 
-The portfolio is designed to be deployed as a modern frontend application.
+The portfolio is designed to be deployed as a modern frontend application and is configured to work on both **Vercel** and **Netlify**.
 
-Typical production workflow:
+### Deploy to Netlify
+
+This repository is fully configured for Netlify deployment. See [NETLIFY_DEPLOYMENT.md](./NETLIFY_DEPLOYMENT.md) for detailed instructions.
+
+**Quick Deploy:**
+1. Push this repository to GitHub
+2. Connect to Netlify
+3. Netlify auto-detects settings from `netlify.toml`
+4. Add environment variables (Supabase keys)
+5. Deploy!
+
+**Configuration Files:**
+- `netlify.toml` - Build and deployment settings
+- `vite.config.ts` - Netlify preset for Nitro
+- `public/_redirects` - SPA routing rules
+- `.env.example` - Required environment variables template
+
+### Deploy to Vercel
+
+The portfolio also works on Vercel with the default configuration.
+
+**Typical production workflow:**
 
 ```text
 GitHub
    ↓
-Build
+Build (npm run build)
    ↓
-Vercel
+Netlify / Vercel
    ↓
 Live Portfolio
 ```
