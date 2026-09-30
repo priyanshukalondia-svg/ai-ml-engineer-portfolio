@@ -1,11 +1,11 @@
 # Netlify Deployment Guide
 
-This guide explains how to deploy the AI/ML Engineer Portfolio to Netlify.
+This guide explains how to deploy the AI/ML Engineer Portfolio to Netlify. This project is specifically optimized for Netlify deployment.
 
 ## Prerequisites
 
-- A Netlify account
-- This repository connected to your Netlify account
+- A Netlify account (free tier works great!)
+- This repository on GitHub
 - Node.js 20+ installed (for local testing)
 
 ## Automatic Deployment
@@ -23,12 +23,19 @@ This file contains all the build and deployment settings:
 - Cache headers for static assets
 
 ### 2. `vite.config.ts`
-Updated to use the Netlify preset for Nitro:
+Optimized with static preset specifically for Netlify:
 ```typescript
 nitro: {
-  preset: "netlify",
+  preset: "static",
+  serveStatic: true,
+  prerender: {
+    crawlLinks: true,
+    routes: ["/"],
+  },
 }
 ```
+
+This configuration generates a complete static site that Netlify serves perfectly.
 
 ### 3. `public/_redirects`
 Fallback redirect rules for client-side routing.

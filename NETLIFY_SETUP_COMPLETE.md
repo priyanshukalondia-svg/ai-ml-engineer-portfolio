@@ -240,27 +240,26 @@ Browser loads + hydrates React
 Client-side navigation from here!
 ```
 
-## Differences from Vercel
+## Differences from Other Platforms
 
-### Similarities
-- Both support SSR/SSG with TanStack Start
-- Both use serverless functions
-- Both provide global CDN
-- Both support environment variables
-- Both offer automatic HTTPS
+This project is specifically optimized for Netlify:
 
-### Key Differences
+| Feature | Configuration |
+|---------|--------------|
+| Build System | Vite + TanStack Start |
+| Deployment Mode | Static Site Generation |
+| Build Output | `.output/public` |
+| Preset | `static` (optimized for Netlify) |
+| Edge Network | Netlify CDN |
+| Configuration | `netlify.toml` |
+| Routing | Client-side (SPA) |
 
-| Feature | Vercel | Netlify (This Setup) |
-|---------|--------|---------------------|
-| Default Build | Zero-config for Next.js | Configured via netlify.toml |
-| Functions | Vercel Functions | Netlify Functions |
-| Build Output | `.vercel/` | `.output/` |
-| Nitro Preset | `vercel` | `netlify` |
-| Edge Network | Vercel Edge | Netlify Edge |
-| Configuration | `vercel.json` | `netlify.toml` |
-
-Both platforms work great! Choose based on your preference.
+The static build approach ensures:
+- ✅ Fast, reliable deployments
+- ✅ Global CDN distribution
+- ✅ No serverless complexity
+- ✅ Optimal performance
+- ✅ Easy debugging
 
 ## Performance Optimizations Included
 

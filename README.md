@@ -2,9 +2,11 @@
 
 > Personal portfolio showcasing my work in **Artificial Intelligence, Machine Learning, Generative AI, and AI Engineering**.
 
-🌐 **Live Portfolio:** [View Website](https://ai-ml-engineer-portfolio.vercel.app/)
+🌐 **Live Portfolio:** [View Website](https://priyanshukalondia.netlify.app/)
 
 💻 **GitHub:** [@priyanshukalondia-svg](https://github.com/priyanshukalondia-svg)
+
+🌐 **Portfolio:** [https://priyanshukalondia.netlify.app](https://priyanshukalondia.netlify.app)
 
 ---
 
@@ -153,7 +155,7 @@ The project demonstrates the complete ML workflow from preparing data and traini
 * Git
 * GitHub
 * Docker
-* Vercel
+* Netlify
 * Render
 
 ---
@@ -236,40 +238,44 @@ Open the local development URL shown by Vite.
 
 ## 🌐 Deployment
 
-The portfolio is designed to be deployed as a modern frontend application and is configured to work on both **Vercel** and **Netlify**.
+This portfolio is optimized and configured exclusively for **Netlify** deployment.
 
 ### Deploy to Netlify
 
-This repository is fully configured for Netlify deployment. See [NETLIFY_DEPLOYMENT.md](./NETLIFY_DEPLOYMENT.md) for detailed instructions.
+The repository comes with complete Netlify configuration out of the box.
 
 **Quick Deploy:**
 1. Push this repository to GitHub
-2. Connect to Netlify
+2. Connect to Netlify (https://app.netlify.com)
 3. Netlify auto-detects settings from `netlify.toml`
 4. Add environment variables (Supabase keys)
 5. Deploy!
 
 **Configuration Files:**
-- `netlify.toml` - Build and deployment settings
-- `vite.config.ts` - Netlify preset for Nitro
-- `public/_redirects` - SPA routing rules
+- `netlify.toml` - Complete Netlify build and deployment settings
+- `vite.config.ts` - Optimized with static preset for Netlify
+- `public/_redirects` - SPA routing fallback rules
 - `.env.example` - Required environment variables template
 
-### Deploy to Vercel
-
-The portfolio also works on Vercel with the default configuration.
-
-**Typical production workflow:**
+**Production Workflow:**
 
 ```text
-GitHub
-   ↓
-Build (npm run build)
-   ↓
-Netlify / Vercel
-   ↓
-Live Portfolio
+GitHub Repository
+       ↓
+   Push to main
+       ↓
+Netlify Auto-Deploy
+       ↓
+ Build (npm run build)
+       ↓
+   Static Site Generation
+       ↓
+Deploy to Netlify CDN
+       ↓
+  Live Portfolio ✨
 ```
+
+**Live Site:** Deployed on Netlify at https://priyanshukalondia.netlify.app
 
 ---
 
@@ -298,7 +304,7 @@ I'm interested in **AI/ML Engineering, Generative AI, MLOps, and building produc
 If you're working on something interesting in AI or ML, feel free to connect.
 
 * **GitHub:** https://github.com/priyanshukalondia-svg
-* **Portfolio:** https://ai-ml-engineer-portfolio.vercel.app/
+* **Portfolio:** https://priyanshukalondia.netlify.app
 
 ---
 

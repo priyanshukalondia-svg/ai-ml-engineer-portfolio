@@ -4,7 +4,7 @@
 Your site shows "Page not found" when deployed to Netlify, even though it works locally.
 
 ## Root Cause
-TanStack Start with the Lovable config defaults to a Cloudflare/Vercel preset. The build output structure might not match what Netlify expects for serverless functions.
+TanStack Start's default configuration uses serverless/SSR mode. This project has been reconfigured to use static site generation, which is optimal for Netlify's platform.
 
 ## Solution Applied
 
@@ -149,17 +149,26 @@ ls .output/public  # Should see index.html
   status = 200  # NOT 301 or 302
 ```
 
-## Alternative: Use Vercel Instead
+## Alternative Solutions
 
-If Netlify continues to have issues, this project works perfectly on Vercel:
+If you continue to experience issues after following all steps above:
 
-1. Go to [vercel.com](https://vercel.com)
-2. Import your GitHub repository
-3. Vercel auto-detects TanStack Start
-4. Add environment variables
-5. Deploy
+### Check Netlify Support
 
-No configuration needed - works out of the box!
+1. Review [Netlify Documentation](https://docs.netlify.com/)
+2. Post in [Netlify Support Forums](https://answers.netlify.com/)
+3. Check [Netlify Status Page](https://www.netlifystatus.com/) for outages
+
+### Local Build Verification
+
+Ensure your build works locally:
+```bash
+npm install
+npm run build
+npm run preview
+```
+
+If it works locally but fails on Netlify, the issue is environment-specific (check Node version, environment variables, etc.).
 
 ## Debugging Commands
 
@@ -258,4 +267,4 @@ The following files have been updated to fix the 404:
 
 ---
 
-**Pro Tip**: If you're still having issues, temporarily try deploying to Vercel to verify your build works. If it works on Vercel but not Netlify, the issue is Netlify-specific configuration. If it fails on both, the issue is in your code/build.
+**Pro Tip**: Keep your Node.js version consistent between local development and Netlify (both should use Node 20). This ensures builds work the same way in both environments.
