@@ -13,6 +13,11 @@ export default defineConfig({
     server: { entry: "server" },
   },
   nitro: {
-    preset: "netlify",
+    preset: "static",
+    serveStatic: true,
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+    },
   },
 });
